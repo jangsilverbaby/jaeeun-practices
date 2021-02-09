@@ -15,6 +15,7 @@
 		F2647B4425D004470034621E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2647B4225D004470034621E /* LaunchScreen.storyboard */; };
 		F2647B4F25D004470034621E /* HelloWorldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2647B4E25D004470034621E /* HelloWorldTests.swift */; };
 		F2647B5A25D004470034621E /* HelloWorldUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2647B5925D004470034621E /* HelloWorldUITests.swift */; };
+		F2647B7625D268A50034621E /* LaunchScreen2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2647B7525D268A50034621E /* LaunchScreen2.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		F2647B5525D004470034621E /* HelloWorldUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloWorldUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2647B5925D004470034621E /* HelloWorldUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloWorldUITests.swift; sourceTree = "<group>"; };
 		F2647B5B25D004470034621E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2647B7525D268A50034621E /* LaunchScreen2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen2.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				F2647B3D25D004440034621E /* Main.storyboard */,
 				F2647B4025D004470034621E /* Assets.xcassets */,
 				F2647B4225D004470034621E /* LaunchScreen.storyboard */,
+				F2647B7525D268A50034621E /* LaunchScreen2.storyboard */,
 				F2647B4525D004470034621E /* Info.plist */,
 			);
 			path = HelloWorld;
@@ -231,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2647B7625D268A50034621E /* LaunchScreen2.storyboard in Resources */,
 				F2647B4425D004470034621E /* LaunchScreen.storyboard in Resources */,
 				F2647B4125D004470034621E /* Assets.xcassets in Resources */,
 				F2647B3F25D004440034621E /* Main.storyboard in Resources */,
