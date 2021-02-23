@@ -79,6 +79,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="pKc-6I-VLN">
                             <connections>
                                 <action selector="onPerformSegue:" destination="BYZ-38-t0r" id="nSU-y0-7jH"/>
+                                <segue destination="vtU-cU-Jrt" kind="show" identifier="ActionSubmit" id="CSG-FH-65D"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -88,7 +89,6 @@
                         <outlet property="intervalText" destination="DaU-gp-9nr" id="5rb-wI-hRS"/>
                         <outlet property="isUpdate" destination="fwH-Z5-fsw" id="7iu-T2-B8m"/>
                         <outlet property="isUpdateText" destination="ozD-lX-8UZ" id="nM2-43-Nun"/>
-                        <segue destination="vtU-cU-Jrt" kind="show" identifier="ManualSubmit" id="yKG-rb-c1b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

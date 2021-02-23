@@ -61,7 +61,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onPerformSegue(_ sender: Any) {
-        performSegue(withIdentifier: "ManualSubmit", sender: self)
+        performSegue(withIdentifier: "ActionSubmit", sender: self)
     }
     
     //세그웨이가 실행되기 직전에 호출되는 메소드
