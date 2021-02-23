@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     //이메일 주소를 입력받는 텍스트필드
     @IBOutlet var email: UITextField!
     
@@ -56,7 +56,32 @@ class ViewController: UIViewController {
         rvc.paramInterval = interval.value //갱신주기
         
         //화면이동
+        present(rvc, animated: true)
         navigationController?.pushViewController(rvc, animated: true)
     }
+    
+    @IBAction func onPerformSegue(_ sender: Any) {
+        performSegue(withIdentifier: "ManualSubmit", sender: self)
+    }
+    
+    //세그웨이가 실행되기 직전에 호출되는 메소드
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        //세그웨이를 다룰 때에는 이동할 대상 뷰 컨트롤러의 인스턴스를 직접 생성하면 안된다. 세그웨이의 목적지로 연결된 뷰 컨트롤러의 인스턴스는 세그웨이에 의해 자동으로 생성되기 때문에 , 메소드를 이용하여 생성한 인스턴스와는 일치하지 않는다.
+        //목적지 뷰 컨트롤러 인스턴스 읽어오기
+        let dest = segue.destination
+        
+        guard let rvc = dest as? ResultViewController else {
+            return
+        }
+        
+        rvc.paramEmail = email.text! //이메일
+        rvc.paramUpdate = isUpdate.isOn //자동갱신 여부
+        rvc.paramInterval = interval.value //갱신주기
+    }
+    
 }
+
+
+
 
