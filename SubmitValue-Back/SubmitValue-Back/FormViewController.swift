@@ -18,16 +18,16 @@ class FormViewController: UIViewController {
     //Submit 버튼을 클릭했을 때 호출되는 메소드
     @IBAction func onSubmit(_ sender: Any) {
         
-        //AppDelegate 객체의 인스턴스를 가져온다.
-        let ad = UIApplication.shared.delegate as? AppDelegate
-        //싱글톤 특성 때문에 UIApplication.shared.delegate 구문을 통해 현재 생성되어 있는 인스턴스를 참조한다.
+        //UserDefault 객체의 인스턴스를 가져온다
+        let ud = UserDefaults.standard
+        //UserDefault는 시스템에서 제공하는 단일 객체이므로 UserDefaults.standard 프로퍼티를 사용하여 읽어와야 한다. 이 프로퍼티는 클래스 프로퍼티이므로 UserDefaults 인스턴스를 생성하지 않고도 사용할 수 있다.
         
         
         
-        //값을 지정한다.
-        ad?.paramEmail = self.email.text
-        ad?.paramUpdate = self.isUpdate.isOn
-        ad?.paramInterval = self.interval.value
+        //값을 저장한다.
+        ud.set(email.text, forKey: "email")
+        ud.set(isUpdate.isOn, forKey: "isUpdate")
+        ud.set(interval.value, forKey: "interval")
         
         //이전 화면으로 복귀한다.
         self.presentingViewController?.dismiss(animated: true)
