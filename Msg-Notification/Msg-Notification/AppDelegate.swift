@@ -27,6 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             //아래 메소드가 호출될 떄가 실제로 사용자에게 동의 여부 창이 표시되는 시점이다.
             //알림 허용여부를 사용자에게 확인받고, 사용자의 선택을 애플리케이션에 등록하는 역할을 한다.
             application.registerUserNotificationSettings(setting)
+            
+            if let localNoti = launchOptions?[UIApplication.LaunchOptionsKey.localNotification] as? UILocalNotification {
+                //알림으로 인해 앱이 실행된 경우이다. 이때에는 알림과 관련된 처리를 해 준다.
+            }
         }
         return true
     }
@@ -64,6 +68,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             print(userInfo["name"]!)
         }
         completionHandler()
+    }
+    
+    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+        print((notification.userInfo?["name"])!)
+        if application.applicationState == UIApplication.State.active {
+            //앱이 활성화된 상태일 때 실행할 로직
+        } else if application.applicationState == .inactive{
+            //앱이 비활성화된 상태일 때 실행할 로직
+        }
     }
 }
 
