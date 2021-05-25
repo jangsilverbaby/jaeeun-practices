@@ -34,15 +34,18 @@ class ViewController: UIViewController {
         // 테두리 두께 성정 (단위: pt)
         tf.layer.borderWidth = 2.0
         
-      
+        // 텍스트 필드를 최초 응답자로 지정
+        tf.becomeFirstResponder()
     }
     
     @IBAction func confirm(_ sender: Any) {
-       
+        //텍스트 필드를 최초 응답자 객체에서 해제
+        tf.resignFirstResponder()
     }
     
     @IBAction func input(_ sender: Any) {
-        
+        //텍스트 필드를 최초 응답자 객체로 지정
+        tf.becomeFirstResponder()
     }
 }
 
