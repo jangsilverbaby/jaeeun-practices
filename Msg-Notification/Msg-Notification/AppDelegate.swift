@@ -66,6 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         if response.notification.request.identifier == "wakeup" {
             let userInfo = response.notification.request.content.userInfo
             print(userInfo["name"]!)
+            print(2)
         }
         completionHandler()
     }
