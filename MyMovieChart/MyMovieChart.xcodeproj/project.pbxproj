@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F23DCBA4269E930800766353 /* MovieVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23DCBA3269E930800766353 /* MovieVo.swift */; };
 		F273C7692661B73D00D325EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F273C7682661B73D00D325EE /* AppDelegate.swift */; };
 		F273C76B2661B73D00D325EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F273C76A2661B73D00D325EE /* SceneDelegate.swift */; };
 		F273C76D2661B73D00D325EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F273C76C2661B73D00D325EE /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F23DCBA3269E930800766353 /* MovieVo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieVo.swift; sourceTree = "<group>"; };
 		F273C7652661B73D00D325EE /* MyMovieChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMovieChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F273C7682661B73D00D325EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F273C76A2661B73D00D325EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				F273C76A2661B73D00D325EE /* SceneDelegate.swift */,
 				F273C76C2661B73D00D325EE /* ViewController.swift */,
 				F273C76E2661B73D00D325EE /* Main.storyboard */,
+				F23DCBA3269E930800766353 /* MovieVo.swift */,
 				F273C77C2661B85000D325EE /* ListViewController.swift */,
 				F273C7712661B73F00D325EE /* Assets.xcassets */,
 				F273C7732661B73F00D325EE /* LaunchScreen.storyboard */,
@@ -144,6 +147,7 @@
 				F273C7692661B73D00D325EE /* AppDelegate.swift in Sources */,
 				F273C77D2661B85000D325EE /* ListViewController.swift in Sources */,
 				F273C76B2661B73D00D325EE /* SceneDelegate.swift in Sources */,
+				F23DCBA4269E930800766353 /* MovieVo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
