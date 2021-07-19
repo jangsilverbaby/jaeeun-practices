@@ -21,7 +21,7 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ListCell" rowHeight="80" id="SZ3-gz-ifI">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ListCell" rowHeight="80" id="SZ3-gz-ifI" customClass="MovieCell" customModule="MyMovieChart" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="24.5" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SZ3-gz-ifI" id="ggW-ns-roC">
@@ -58,6 +58,12 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="desc" destination="R5W-kB-1Vv" id="hKR-9u-QqV"/>
+                                    <outlet property="opendate" destination="G8R-Wm-9Zh" id="A3c-KF-qIq"/>
+                                    <outlet property="rating" destination="zdh-1W-Ybd" id="nek-kx-d8P"/>
+                                    <outlet property="title" destination="tXs-wW-jTB" id="ajT-vX-d4Y"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
