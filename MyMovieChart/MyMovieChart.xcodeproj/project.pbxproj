@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		F23DCBA4269E930800766353 /* MovieVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23DCBA3269E930800766353 /* MovieVo.swift */; };
 		F23DCBA626A580B500766353 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23DCBA526A580B500766353 /* MovieCell.swift */; };
+		F23DCBAB26A5A5B400766353 /* darknight.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F23DCBA826A5A5B400766353 /* darknight.jpg */; };
+		F23DCBAC26A5A5B400766353 /* rain.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F23DCBA926A5A5B400766353 /* rain.jpg */; };
+		F23DCBAD26A5A5B400766353 /* secret.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F23DCBAA26A5A5B400766353 /* secret.jpg */; };
 		F273C7692661B73D00D325EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F273C7682661B73D00D325EE /* AppDelegate.swift */; };
 		F273C76B2661B73D00D325EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F273C76A2661B73D00D325EE /* SceneDelegate.swift */; };
 		F273C76D2661B73D00D325EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F273C76C2661B73D00D325EE /* ViewController.swift */; };
@@ -21,6 +24,9 @@
 /* Begin PBXFileReference section */
 		F23DCBA3269E930800766353 /* MovieVo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieVo.swift; sourceTree = "<group>"; };
 		F23DCBA526A580B500766353 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		F23DCBA826A5A5B400766353 /* darknight.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = darknight.jpg; sourceTree = "<group>"; };
+		F23DCBA926A5A5B400766353 /* rain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rain.jpg; sourceTree = "<group>"; };
+		F23DCBAA26A5A5B400766353 /* secret.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = secret.jpg; sourceTree = "<group>"; };
 		F273C7652661B73D00D325EE /* MyMovieChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMovieChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F273C7682661B73D00D325EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F273C76A2661B73D00D325EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +49,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F23DCBA726A5A1EC00766353 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F23DCBA826A5A5B400766353 /* darknight.jpg */,
+				F23DCBA926A5A5B400766353 /* rain.jpg */,
+				F23DCBAA26A5A5B400766353 /* secret.jpg */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		F273C75C2661B73D00D325EE = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +78,7 @@
 		F273C7672661B73D00D325EE /* MyMovieChart */ = {
 			isa = PBXGroup;
 			children = (
+				F23DCBA726A5A1EC00766353 /* Resources */,
 				F273C7682661B73D00D325EE /* AppDelegate.swift */,
 				F273C76A2661B73D00D325EE /* SceneDelegate.swift */,
 				F273C76C2661B73D00D325EE /* ViewController.swift */,
@@ -133,6 +150,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F23DCBAB26A5A5B400766353 /* darknight.jpg in Resources */,
+				F23DCBAD26A5A5B400766353 /* secret.jpg in Resources */,
+				F23DCBAC26A5A5B400766353 /* rain.jpg in Resources */,
 				F273C7752661B73F00D325EE /* LaunchScreen.storyboard in Resources */,
 				F273C7722661B73F00D325EE /* Assets.xcassets in Resources */,
 				F273C7702661B73D00D325EE /* Main.storyboard in Resources */,
