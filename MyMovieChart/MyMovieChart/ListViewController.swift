@@ -8,28 +8,53 @@
 import UIKit
 
 class ListViewController: UITableViewController {
-    // 튜플 아이템으로 구성된 데이터 세트
-    var dataset = [
-        ("다크나이드","영웅물에 철학에 음악까지 더해져 예술이 되다.","2008-09-04",8.95,"darknight.jpg"),
-        ("호우시절","때를 알고 내리는 좋은 비","2009-10-08",7.31,"rain.jpg"),
-        ("말할 수 없는 비밀","여기서 너까지 다섯 걸음","2015-05-07",9.19,"secret.jpg")
-    ]
-    
-    // 테니블 뷰를 구성할 리스트 데이터
+    // 테이블 뷰를 구성할 리스트 데이터
     lazy var list: [MovieVo] = {
         var datalist = [MovieVo]()
-        for (title, desc, opendate, rating, thumbnail) in dataset {
-            let mvo = MovieVo()
-            mvo.title = title
-            mvo.desctiption = desc
-            mvo.opendate = opendate
-            mvo.rating = rating
-            mvo.thumbnail = thumbnail
-            
-            datalist.append(mvo)
-        }
         return datalist
     }()
+    
+    override func viewDidLoad() {
+        // 1. 호핀 API 호출을 위한 URI를 생성
+        let url = "http://swiftapi.rubypaper.co.kr:2029/hoppin/movies?version=1&page=1&count=30&genreId=&order=releasedateasc"
+        let apiURI : URL! = URL(string: url)
+        
+        // 2. REST API를 호출
+        let apidata = try! Data(contentsOf: apiURI)
+        
+        // 3. 데이터 전송 결과를 로그로 출력 (반드시 필요한 코드는 아님)
+        let log = NSString(data: apidata, encoding: String.Encoding.utf8.rawValue) ?? ""
+        NSLog("API Result=\( log )")
+        
+        // 4. JSON 객체를 파싱하여 NSDictionary 객체로 받음
+        do {
+            let apiDictionary = try JSONSerialization.jsonObject(with: apidata, options: []) as! NSDictionary
+            
+            // 5. 데이터 구조에 따라 차례대로 캐스팅하며 읽어온다.
+            let hoppin = apiDictionary["hoppin"] as! NSDictionary
+            let movies = hoppin["movies"] as! NSDictionary
+            let movie = movies["movie"] as! NSArray
+            
+            // 6. Iterator 처리를 하면서 API 데이터를 MovieVo 객체에 저장한다.
+            for row in movie {
+                // 순회 상수를 NSDictionary 타입으로 캐스팅
+                let r = row as! NSDictionary
+                
+                // 테이블 뷰 리스트를 구성할 데이터 형식
+                let mvo = MovieVo()
+                
+                // movie 배열의 각 데이터를 mvo 상수의 속성에 대입
+                mvo.title = r["title"] as? String
+                mvo.desctiption = r["genreNames"] as? String
+                mvo.thumbnail = r["thumbnailImage"] as? String
+                mvo.detail = r["linkUrl"] as? String
+                mvo.rating = ((r["ratingAverage"] as! NSString).doubleValue)
+                
+                // list 배열에 추가
+                list.append(mvo)
+            }
+        } catch { }
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
@@ -47,8 +72,17 @@ class ListViewController: UITableViewController {
         cell.opendate?.text = row.opendate
         cell.rating?.text = "\(row.rating!)"
         
-        //이미지 뷰 처리
-        cell.thumbnail.image = UIImage(named: row.thumbnail!)
+       //섬네일 결로를 인자값으로 하는 URL 객체를 생성
+        let url : URL! = URL(string: row.thumbnail!)
+        
+        //이지미를 읽어와 Data 객체에 저장
+        let imageData = try! Data(contentsOf: url)
+        
+        //UIImage 객체를 생성하여 아울렛 변수의 image 속성에 대입
+        cell.thumbnail.image = UIImage(data: imageData)
+        
+        //->실무에선 한줄로 코딩함
+        //cell.thumbnail.image = UIImage(data: try! Data(contentsOf: URL(string: row.thumbnail!)!)
         
         //구성될 셀을 반환함
         return cell
