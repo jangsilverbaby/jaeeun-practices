@@ -8,22 +8,42 @@
 import UIKit
 
 class ListViewController: UITableViewController {
+    // 현재까지 읽어온 데이터의 페이지 정보
+    var page = 1
+    
     // 테이블 뷰를 구성할 리스트 데이터
     lazy var list: [MovieVo] = {
         var datalist = [MovieVo]()
         return datalist
     }()
     
+    @IBOutlet var moreBnt: UIButton!
+    
+    // 더보기 버튼을 눌렀을 때 호출되는 메소드
+    @IBAction func more(_ sender: Any) {
+        // 현재 페이지 값에 1을 추가한다.
+        page += 1
+        // 영화 차트 API를 호출한다.
+        callMovieAPI()
+        // 데이터를 다시 읽어오도록 테이블 뷰를 갱신한다.
+        tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
+        callMovieAPI()
+    }
+    
+    // 영화 차트 API를 호출해주는 메소드
+    func callMovieAPI() {
         // 1. 호핀 API 호출을 위한 URI를 생성
-        let url = "http://swiftapi.rubypaper.co.kr:2029/hoppin/movies?version=1&page=1&count=30&genreId=&order=releasedateasc"
+        let url = "http://swiftapi.rubypaper.co.kr:2029/hoppin/movies?version=1&page=\(page)&count=30&genreId=&order=releasedateasc"
         let apiURI : URL! = URL(string: url)
         
         // 2. REST API를 호출
         let apidata = try! Data(contentsOf: apiURI)
         
         // 3. 데이터 전송 결과를 로그로 출력 (반드시 필요한 코드는 아님)
-        let log = NSString(data: apidata, encoding: String.Encoding.utf8.rawValue) ?? ""
+        let log = NSString(data: apidata, encoding: String.Encoding.utf8.rawValue) ?? "데이터가 없습니다"
         NSLog("API Result=\( log )")
         
         // 4. JSON 객체를 파싱하여 NSDictionary 객체로 받음
@@ -53,7 +73,17 @@ class ListViewController: UITableViewController {
                 // list 배열에 추가
                 list.append(mvo)
             }
-        } catch { }
+            
+            // 7. 전체 데이터 카운트를 얻는다.
+            let totalCount = (hoppin["totalCount"] as? NSString)!.integerValue
+            
+            // 8. totalCount가 읽어온 데이터 크기와 같거나 클 경우 더보기 버튼을 막는다.
+            if (list.count >= totalCount) {
+                moreBnt.isHidden = true
+            }
+        } catch {
+            NSLog("Parse Error!!")
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
