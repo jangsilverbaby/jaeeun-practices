@@ -70,6 +70,14 @@ class ListViewController: UITableViewController {
                 mvo.detail = r["linkUrl"] as? String
                 mvo.rating = ((r["ratingAverage"] as! NSString).doubleValue)
                 
+                // 웹상에 있는 이미지를 읽어와 UIImage 객체로 생성
+                let url: URL! = URL(string: mvo.thumbnail!)
+                let imageData = try! Data(contentsOf: url)
+                mvo.thumbnailImage = UIImage(data: imageData)
+                
+                //->실무에선 한줄로 코딩함
+                //mvo.thumbnailImage = UIImage(data: try! Data(contentsOf: URL(string: mvo.thumbnail!)))
+                
                 // list 배열에 추가
                 list.append(mvo)
             }
@@ -102,17 +110,8 @@ class ListViewController: UITableViewController {
         cell.opendate?.text = row.opendate
         cell.rating?.text = "\(row.rating!)"
         
-       //섬네일 결로를 인자값으로 하는 URL 객체를 생성
-        let url : URL! = URL(string: row.thumbnail!)
-        
-        //이지미를 읽어와 Data 객체에 저장
-        let imageData = try! Data(contentsOf: url)
-        
-        //UIImage 객체를 생성하여 아울렛 변수의 image 속성에 대입
-        cell.thumbnail.image = UIImage(data: imageData)
-        
-        //->실무에선 한줄로 코딩함
-        //cell.thumbnail.image = UIImage(data: try! Data(contentsOf: URL(string: row.thumbnail!)!)
+        // 이미지 객체를 대입한다.
+        cell.thumbnail.image = row.thumbnailImage
         
         //구성될 셀을 반환함
         return cell
