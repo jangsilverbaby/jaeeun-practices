@@ -94,6 +94,19 @@ class ListViewController: UITableViewController {
         }
     }
     
+    func getThumbnailImage(_ index: Int) -> UIImage {
+        // 인자값으로 받은 인덱스를 기반으로 해당하는 배열 데이터를 읽어옴
+        let mvo = list[index]
+        
+        // 메모이제이션 : 저장된 이미지가 있으면 그것을 반환하고, 없을 경우 내려받아 저장한 후 반환
+        if let savedImage = mvo.thumbnailImage {
+            return savedImage
+        } else {
+            mvo.thumbnailImage = UIImage(data: try! Data(contentsOf: URL(string: mvo.thumbnail!)!))
+            return mvo.thumbnailImage! // 저장된 이미지를 반환
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
     }
@@ -104,14 +117,16 @@ class ListViewController: UITableViewController {
         // 테이블 셀 객체를 직접 생성하는 대신 큐로부터 가져옴
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell") as! MovieCell
         
-        //데이터 소스에 저장된 값을 각 레이블 변수에 할당
+        // 데이터 소스에 저장된 값을 각 레이블 변수에 할당
         cell.title?.text = row.title
         cell.desc?.text = row.desctiption
         cell.opendate?.text = row.opendate
         cell.rating?.text = "\(row.rating!)"
         
-        // 이미지 객체를 대입한다.
-        cell.thumbnail.image = row.thumbnailImage
+        // 비동기 방식으로 섬네일 이미지를 읽어옴
+        DispatchQueue.main.async (execute: {
+            cell.thumbnail.image = self.getThumbnailImage(indexPath.row)
+        })
         
         //구성될 셀을 반환함
         return cell
