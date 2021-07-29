@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -78,6 +79,7 @@
                                     <outlet property="rating" destination="zdh-1W-Ybd" id="nek-kx-d8P"/>
                                     <outlet property="thumbnail" destination="bBT-Jt-5ee" id="qwy-uO-mAU"/>
                                     <outlet property="title" destination="tXs-wW-jTB" id="ajT-vX-d4Y"/>
+                                    <segue destination="LXQ-0c-mba" kind="show" identifier="segue_detail" id="9h1-qL-T34"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -95,6 +97,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ha1-Lh-SVJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="757.97101449275374" y="52.901785714285715"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="sG0-Kd-VH5">
+            <objects>
+                <viewController id="LXQ-0c-mba" customClass="DetailViewController" customModule="MyMovieChart" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vj2-dd-cCo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lIe-KK-VaZ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ILm-A7-e5K"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="D7Y-ww-SN1"/>
+                    <connections>
+                        <outlet property="wv" destination="lIe-KK-VaZ" id="JoF-fe-BKV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y6K-fI-4iP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1560.8695652173915" y="52.901785714285715"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="s9O-Yi-fdO">
