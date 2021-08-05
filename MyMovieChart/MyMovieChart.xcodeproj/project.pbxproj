@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		F221ADEC26BAC8E0002A920D /* Trailer.png in Resources */ = {isa = PBXBuildFile; fileRef = F221ADEA26BAC8E0002A920D /* Trailer.png */; };
 		F221ADED26BAC8E0002A920D /* Listbullets.png in Resources */ = {isa = PBXBuildFile; fileRef = F221ADEB26BAC8E0002A920D /* Listbullets.png */; };
+		F221ADF326BBA568002A920D /* TheaterListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F221ADF226BBA568002A920D /* TheaterListController.swift */; };
+		F221ADF526BBA670002A920D /* TheaterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F221ADF426BBA670002A920D /* TheaterCell.swift */; };
 		F23DCBA4269E930800766353 /* MovieVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23DCBA3269E930800766353 /* MovieVo.swift */; };
 		F23DCBA626A580B500766353 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23DCBA526A580B500766353 /* MovieCell.swift */; };
 		F23DCBAB26A5A5B400766353 /* darknight.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F23DCBA826A5A5B400766353 /* darknight.jpg */; };
@@ -27,6 +29,8 @@
 /* Begin PBXFileReference section */
 		F221ADEA26BAC8E0002A920D /* Trailer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Trailer.png; sourceTree = "<group>"; };
 		F221ADEB26BAC8E0002A920D /* Listbullets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Listbullets.png; sourceTree = "<group>"; };
+		F221ADF226BBA568002A920D /* TheaterListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterListController.swift; sourceTree = "<group>"; };
+		F221ADF426BBA670002A920D /* TheaterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterCell.swift; sourceTree = "<group>"; };
 		F23DCBA3269E930800766353 /* MovieVo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieVo.swift; sourceTree = "<group>"; };
 		F23DCBA526A580B500766353 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		F23DCBA826A5A5B400766353 /* darknight.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = darknight.jpg; sourceTree = "<group>"; };
@@ -91,6 +95,8 @@
 				F273C76A2661B73D00D325EE /* SceneDelegate.swift */,
 				F273C76C2661B73D00D325EE /* ViewController.swift */,
 				F273C76E2661B73D00D325EE /* Main.storyboard */,
+				F221ADF226BBA568002A920D /* TheaterListController.swift */,
+				F221ADF426BBA670002A920D /* TheaterCell.swift */,
 				F25F682326B264EF000E9461 /* DetailViewController.swift */,
 				F23DCBA526A580B500766353 /* MovieCell.swift */,
 				F23DCBA3269E930800766353 /* MovieVo.swift */,
@@ -181,6 +187,8 @@
 				F273C7692661B73D00D325EE /* AppDelegate.swift in Sources */,
 				F23DCBA626A580B500766353 /* MovieCell.swift in Sources */,
 				F273C77D2661B85000D325EE /* ListViewController.swift in Sources */,
+				F221ADF526BBA670002A920D /* TheaterCell.swift in Sources */,
+				F221ADF326BBA568002A920D /* TheaterListController.swift in Sources */,
 				F273C76B2661B73D00D325EE /* SceneDelegate.swift in Sources */,
 				F23DCBA4269E930800766353 /* MovieVo.swift in Sources */,
 				F25F682426B264EF000E9461 /* DetailViewController.swift in Sources */,
