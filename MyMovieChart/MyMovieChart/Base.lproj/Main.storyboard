@@ -98,7 +98,7 @@
             </objects>
             <point key="canvasLocation" x="1668.1159420289857" y="52.901785714285715"/>
         </scene>
-        <!--Root View Controller-->
+        <!--영화관 정보-->
         <scene sceneID="I0B-76-p4t">
             <objects>
                 <tableViewController id="lQ9-Ms-JGy" customClass="TheaterListController" customModule="MyMovieChart" customModuleProvider="target" sceneMemberID="viewController">
@@ -141,6 +141,7 @@
                                     <outlet property="addr" destination="PFm-CE-8cs" id="gXR-y2-cWN"/>
                                     <outlet property="name" destination="NiM-wr-6B6" id="RMd-lQ-Vrr"/>
                                     <outlet property="tel" destination="H6O-Rj-Beu" id="NME-ZV-aLC"/>
+                                    <segue destination="enf-b0-66d" kind="show" identifier="segue_map" id="b5S-nP-vrr"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -149,11 +150,36 @@
                             <outlet property="delegate" destination="lQ9-Ms-JGy" id="DOd-dn-EbO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="cNC-6w-Ggb"/>
+                    <navigationItem key="navigationItem" title="영화관 정보" id="cNC-6w-Ggb"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ITT-hv-c7r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1666.6666666666667" y="784.82142857142856"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="NOw-30-Ac0">
+            <objects>
+                <viewController id="enf-b0-66d" customClass="TheaterViewController" customModule="MyMovieChart" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SRX-n3-RY2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="YJm-gN-N95">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="UVs-ed-0rd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="JNi-cH-9kd"/>
+                    <connections>
+                        <outlet property="map" destination="YJm-gN-N95" id="WAx-WP-7bQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yuz-Xp-uyp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2471" y="785"/>
         </scene>
         <!--영화관-->
         <scene sceneID="zpx-cs-4Ku">
