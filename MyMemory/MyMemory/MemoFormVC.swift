@@ -7,23 +7,76 @@
 
 import UIKit
 
-class MemoFormVC: UIViewController {
-
+class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate {
+    var subject: String!
+    
+    @IBOutlet weak var contents: UITextView!
+    @IBOutlet weak var preview: UIImageView!
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.contents.delegate = self
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // 사용자가 텍스트 뷰에 뭔가를 입력하면 자동으로 이 메소드가 호출된다
+    func textViewDidChange(_ textView: UITextView) {
+        // 내용의 최대 15자리까지 읽어 subject 변수에 저장한다.
+        // 1. 텍스트 뷰의 내용을 읽어 NSString 타입으로 캐스팅한 다음, 변수에 저장한다.
+        let contents = textView.text as NSString
+        // 2. 읽어온 내용이 15자리보다 길 경우 15자리까지만, 그보다 짧을 경우 전체 내용을 읽어온다.
+        let length = ((contents.length > 15) ? 15 : contents.length)
+        // 3. 최대 15자리까지의 내용을 subject 변수에 저장한다. 이 값이 제목이 된다.
+        subject = contents.substring(with: NSRange(location: 0, length: length))
+        
+        // 4. 내비게이션 타이틀에 표시한다.
+        navigationItem.title = subject
     }
-    */
-
+    
+    // 저장 버튼을 클릭했을 때 호출되는 메소드
+    @IBAction func save(_ sender: Any) {
+        // 1. 내용을 입력하지 않았을 경우, 경고한다.
+        guard contents.text?.isEmpty == false else {
+            // 내용이 비어 있을 때 처리
+            let alert = UIAlertController(title: nil, message: "내용을 입력해주세요", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true)
+            return
+        }
+        
+        // 2. MemoData 객체를 생성하고, 데이터를 담는다.
+        let data = MemoData()
+        
+        data.title = subject // 제목
+        data.contents = contents.text // 내용
+        data.image = preview.image // 이미지
+        data.regdate = Date() // 작성 시각
+        
+        // 3. 앱 델리게이트 객체를 읽어온 다음, memolist 배열에 MemoData 객체를 추가한다.
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.memolist.append(data)
+        
+        // 4. 작성폼 화면을 종료하고, 이전 화면으로 되돌아간다.
+        _ = navigationController?.popViewController(animated: true)
+    }
+    
+    // 카메라 버튼은 클릭했을 때 호출되는 메소드
+    @IBAction func pick(_ sender: Any) {
+        // 1. 이미지 피커 인스턴스를 생성한다.
+        let picker = UIImagePickerController()
+        // 2. 이미지 피커 컨트롤러 인스턴스의 델리게이트 속성을 현재의 뷰 컨트롤러 인스턴스로 설정한다.
+        picker.delegate = self
+        // 3. 이미지 피커 컨트롤러의 이미지 편집을 허용한다.
+        picker.allowsEditing = true
+        
+        // 4. 이미지 피커 화면을 표시한다.
+        present(picker, animated: false)
+    }
+    
+    // 사용자가 이미지를 선택하면 자동으로 이 메소드가 호출된다.
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        // 선택된 이미지를 미리보기에 출력한다.
+        preview.image = info[.editedImage] as? UIImage
+        
+        // 이미지 피커 컨트롤러를 닫는다.
+        picker.dismiss(animated: false)
+    }
 }
