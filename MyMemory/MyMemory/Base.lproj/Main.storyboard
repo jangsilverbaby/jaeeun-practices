@@ -140,10 +140,63 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="nYg-cc-xpJ" kind="show" identifier="read_sg" id="uf6-q9-yJK"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="REX-jT-IEO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="399.19999999999999" y="142.57871064467767"/>
+        </scene>
+        <!--상세 화면-->
+        <scene sceneID="H7u-kZ-mAc">
+            <objects>
+                <viewController title="상세 화면" id="nYg-cc-xpJ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D4m-Za-S2a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNj-LM-Kgk">
+                                <rect key="frame" x="16" y="60" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="aca-QU-p7Z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5p-wu-Mwe">
+                                <rect key="frame" x="16" y="101" width="343" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cmx-v5-Bxx" userLabel="상세 화면의 이미지 뷰">
+                                <rect key="frame" x="16" y="137" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="Tru-bB-Iy0"/>
+                                    <constraint firstAttribute="height" constant="250" placeholder="YES" id="Zcu-2S-Fif"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="x38-iO-2qb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eNj-LM-Kgk" firstAttribute="top" secondItem="x38-iO-2qb" secondAttribute="top" constant="16" id="5hV-bE-qwf"/>
+                            <constraint firstItem="Cmx-v5-Bxx" firstAttribute="leading" secondItem="x38-iO-2qb" secondAttribute="leading" constant="16" id="7O6-cG-DTA"/>
+                            <constraint firstItem="Cmx-v5-Bxx" firstAttribute="top" secondItem="y5p-wu-Mwe" secondAttribute="bottom" constant="20" id="8B2-CH-SbQ"/>
+                            <constraint firstItem="eNj-LM-Kgk" firstAttribute="leading" secondItem="x38-iO-2qb" secondAttribute="leading" constant="16" id="FuC-lr-820"/>
+                            <constraint firstItem="x38-iO-2qb" firstAttribute="trailing" secondItem="eNj-LM-Kgk" secondAttribute="trailing" constant="16" id="H6t-5e-dlf"/>
+                            <constraint firstItem="x38-iO-2qb" firstAttribute="trailing" secondItem="y5p-wu-Mwe" secondAttribute="trailing" constant="16" id="IBo-X0-7wp"/>
+                            <constraint firstItem="y5p-wu-Mwe" firstAttribute="top" secondItem="eNj-LM-Kgk" secondAttribute="bottom" constant="20" id="XQt-r9-zEL"/>
+                            <constraint firstItem="y5p-wu-Mwe" firstAttribute="leading" secondItem="x38-iO-2qb" secondAttribute="leading" constant="16" id="eE2-3P-JBj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="fqU-xS-EaP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cRB-FD-3Dd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1164" y="142.57871064467767"/>
         </scene>
         <!--메모 작성-->
         <scene sceneID="NmV-Mu-rXY">
@@ -190,7 +243,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qnH-Ti-zOE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1148" y="142.57871064467767"/>
+            <point key="canvasLocation" x="1164" y="-480"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Bt2-I8-AtZ">
