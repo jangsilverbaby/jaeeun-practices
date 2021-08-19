@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         
         // 자동생성 레이블을 생성하고 루트 뷰에 추가한다.
         let lblUpdate = UILabel()
-        lblUpdate.frame = CGRect(x: 30, y: 150, width: 100, height: 30)
+        lblUpdate.frame = CGRect(x: lblEmail.frame.origin.x, y: 150, width: 100, height: 30)
         lblUpdate.text = "자동갱신"
         lblUpdate.font = UIFont.systemFont(ofSize: 14)
         
@@ -50,7 +50,7 @@ class ViewController: UIViewController {
         
         // 갱신주기 레이블을 생성하고 루트 뷰에 추가한다.
         let lblInterval = UILabel()
-        lblInterval.frame = CGRect(x: 30, y: 200, width: 100, height: 30)
+        lblInterval.frame = CGRect(x: lblEmail.frame.origin.x, y: 200, width: 100, height: 30)
         lblInterval.text = "갱신주기"
         lblInterval.font = UIFont.systemFont(ofSize: 14)
         
@@ -67,7 +67,7 @@ class ViewController: UIViewController {
         
         // 스위치 객체를 생성한다.
         paramUpdate = UISwitch()
-        paramUpdate.frame = CGRect(x: 120, y: 150, width: 50, height: 30)
+        paramUpdate.frame = CGRect(x: paramEmail.frame.origin.x, y: 150, width: 50, height: 30)
         
         // 스위치가 On 되어 있는 상태를 기본값으로 설정한다.
         paramUpdate.setOn(true, animated: true)
@@ -77,7 +77,7 @@ class ViewController: UIViewController {
         // 갱신주기를 위한 스테퍼를 추가한다.
         paramInterval = UIStepper()
         
-        paramInterval.frame = CGRect(x: 120, y: 200, width: 50, height: 30)
+        paramInterval.frame = CGRect(x: paramEmail.frame.origin.x, y: 200, width: 50, height: 30)
         paramInterval.minimumValue = 0 // 1. 스테퍼가 가질 수 있는 최소값
         paramInterval.maximumValue = 100 // 2. 스테퍼가 가질 수 있는 최대값
         paramInterval.stepValue = 1 // 스테퍼의 값 변경 단위
