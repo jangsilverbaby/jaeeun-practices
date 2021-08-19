@@ -105,6 +105,10 @@ class ViewController: UIViewController {
         //스위치와 스테퍼 컨트롤의 Value Changed 이벤트를 각각 액션 메소드에 연결한다.
         paramUpdate.addTarget(self, action: #selector(presentUpdateValue(_:)), for: .valueChanged)
         paramInterval.addTarget(self, action: #selector(presentIntervalValue(_:)), for: .valueChanged)
+        
+        // 전송 버튼을 내비게이션 아이템에 추가하고, submit 메소드에 연결한다.
+        let submitBtn = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(submit(_:)))
+        navigationItem.rightBarButtonItem = submitBtn
     }
     
     // 스위치와 상호반응할 액션 메소드
@@ -115,6 +119,15 @@ class ViewController: UIViewController {
     // 스테퍼와 상호반응할 액션 메소드
     @objc func presentIntervalValue(_ sender: UIStepper) {
         txtInterval.text = ("\(Int(sender.value))분마다")
+    }
+    
+    @objc func submit(_ sender: Any) {
+        let rvc = ReadViewController()
+        rvc.pEmail = paramEmail.text
+        rvc.pUpdate = paramUpdate.isOn
+        rvc.pInterval = paramInterval.value
+        
+        navigationController?.pushViewController(rvc, animated: true)
     }
 }
 
