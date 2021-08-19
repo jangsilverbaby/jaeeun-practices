@@ -14,6 +14,7 @@
 		F2EB495F26CE44A10016A111 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2EB495E26CE44A10016A111 /* Assets.xcassets */; };
 		F2EB496226CE44A10016A111 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2EB496026CE44A10016A111 /* LaunchScreen.storyboard */; };
 		F2EB496A26CE80820016A111 /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB496926CE80820016A111 /* ReadViewController.swift */; };
+		F2EB496C26CE927B0016A111 /* SDMiSaeng.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2EB496B26CE91C80016A111 /* SDMiSaeng.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		F2EB496126CE44A10016A111 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2EB496326CE44A10016A111 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2EB496926CE80820016A111 /* ReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
+		F2EB496B26CE91C80016A111 /* SDMiSaeng.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SDMiSaeng.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		F2EB495426CE449E0016A111 /* InputForm */ = {
 			isa = PBXGroup;
 			children = (
+				F2EB496B26CE91C80016A111 /* SDMiSaeng.ttf */,
 				F2EB495526CE449E0016A111 /* AppDelegate.swift */,
 				F2EB495726CE449E0016A111 /* SceneDelegate.swift */,
 				F2EB495926CE449E0016A111 /* ViewController.swift */,
@@ -127,6 +130,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2EB496C26CE927B0016A111 /* SDMiSaeng.ttf in Resources */,
 				F2EB496226CE44A10016A111 /* LaunchScreen.storyboard in Resources */,
 				F2EB495F26CE44A10016A111 /* Assets.xcassets in Resources */,
 				F2EB495D26CE449E0016A111 /* Main.storyboard in Resources */,

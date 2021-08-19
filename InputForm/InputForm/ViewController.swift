@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     var paramInterval: UIStepper! // 스테퍼
     var txtUdate: UILabel! // 스위치 컨트롤의 값을 표현할 레이블
     var txtInterval: UILabel! // 스테퍼 컬트롤의 값을 표현할 레이블
+
     
     override func viewDidLoad() {
         // 1. 내비게이션 바 타이틀을 입력한다.
@@ -84,10 +85,12 @@ class ViewController: UIViewController {
         
         view.addSubview(paramInterval)
         
+        let customFont = UIFont(name: "SDMiSaeng", size: 20)
+        
         // 스위치 객체의 값을 표현할 레이블을 추가한다.
         txtUdate = UILabel()
         txtUdate.frame = CGRect(x: 250, y: 150, width: 100, height: 30)
-        txtUdate.font = UIFont.systemFont(ofSize: 12)
+        txtUdate.font = customFont
         txtUdate.textColor = UIColor.red // 1. 텍스트의 색상 설정
         txtUdate.text = "갱신함" // 2. "갱신함" or "갱신하지 않음"
         
@@ -96,7 +99,7 @@ class ViewController: UIViewController {
         // 스테퍼의 값을 텍스트로 표현할 레이블을 추가한다.
         txtInterval = UILabel()
         txtInterval.frame = CGRect(x: 250, y: 200, width: 100, height: 30)
-        txtInterval.font = UIFont.systemFont(ofSize: 12)
+        txtInterval.font = customFont
         txtInterval.textColor = UIColor.red
         txtInterval.text = "0분마다"
         
