@@ -30,9 +30,7 @@ class ThirdViewController: UIViewController {
         // 5. 수퍼 뷰에 추가
         view.addSubview(title)
         
-        // 탭 바 아이템에 커스텀 이미지를 등록하고 탭 이름을 입력한다.
-        tabBarItem.image = UIImage(named: "photo.png")
-        tabBarItem.title = "photo"
+        
     }
 
 

@@ -23,9 +23,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             // 2. 탭 바에서 탭 바 아이템 배열을 가져온다.
             if let tbItems = tbC.tabBar.items {
                 // 3. 탭 바 아이템에 커스텀 이미지를 등록한다.
-                tbItems[0].image = UIImage(named: "calendar")
-                tbItems[1].image = UIImage(named: "file-tree")
-                tbItems[2].image = UIImage(named: "photo")
+                tbItems[0].image = UIImage(named: "designbump")?.withRenderingMode(.alwaysOriginal)
+                tbItems[1].image = UIImage(named: "rss")?.withRenderingMode(.alwaysOriginal)
+                tbItems[2].image = UIImage(named: "facebook")?.withRenderingMode(.alwaysOriginal)
+                
+                // 탭 바 아이템 전체를 순회하면서 selectedImage 속성에 이미지를 설정한다.
+                for tbItem in tbItems {
+                    let image = UIImage(named: "checkmark")?.withRenderingMode(.alwaysOriginal)
+                    tbItem.selectedImage = image
+                }
                 
                 // 4. 탭 바 아이템에 타이틀을 설정한다.
                 tbItems[0].title = "calendar"
