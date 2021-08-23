@@ -31,15 +31,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 for tbItem in tbItems {
                     let image = UIImage(named: "checkmark")?.withRenderingMode(.alwaysOriginal)
                     tbItem.selectedImage = image
-                    
-                    // 탭 바 아이템 별 텍스트 색상 속성을 설정한다.
-                    tbItem.setTitleTextAttributes([.foregroundColor: UIColor.gray], for: .disabled)
-                    tbItem.setTitleTextAttributes([.foregroundColor: UIColor.red], for: .selected)
-                    
-                    // 전체 아이템의 폰트 크기를 설정한다.
-                    tbItem.setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 15)], for: .normal)
-                    // 속성에 대한 키는 NSAttributedString.Key 열거형에 정의되어 있음
                 }
+                
+                // 외형 프록시 객체를 이용하여 아이템의 타이틀 색상과 폰트 크기를 설정한다.
+                let tbItemProxy = UITabBarItem.appearance()
+                tbItemProxy.setTitleTextAttributes([.foregroundColor: UIColor.red], for: .selected)
+                tbItemProxy.setTitleTextAttributes([.foregroundColor: UIColor.gray], for: .disabled)
+                tbItemProxy.setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 15)], for: .normal)
                 
                 // 4. 탭 바 아이템에 타이틀을 설정한다.
                 tbItems[0].title = "calendar"
@@ -47,8 +45,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 tbItems[2].title = "photo"
             }
             
+            let tbProxy = UITabBar.appearance()
+            // 5. 활성화된 탭 바 아이템의 이미지 색상을 변경한다.
+            tbProxy.tintColor = UIColor.white
+            
             // 6. 탭 바에 배경 이미지를 설정한다.
-            tbC.tabBar.backgroundImage = UIImage(named: "menubar-bg-mini")?.stretchableImage(withLeftCapWidth: 5, topCapHeight: 16)
+            tbProxy.backgroundImage = UIImage(named: "menubar-bg-mini")?.stretchableImage(withLeftCapWidth: 5, topCapHeight: 16)
         }
     }
 
