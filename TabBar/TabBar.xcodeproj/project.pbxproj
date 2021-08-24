@@ -28,6 +28,7 @@
 		F28BB67426CFC5AC0061ADF5 /* facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F28BB66726CFC5AB0061ADF5 /* facebook@2x.png */; };
 		F28BB67526CFC5AC0061ADF5 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = F28BB66826CFC5AB0061ADF5 /* calendar.png */; };
 		F28BB67626CFC5AC0061ADF5 /* menubar-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = F28BB66926CFC5AC0061ADF5 /* menubar-bg.png */; };
+		F28FE63E26D330E200525319 /* NewSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28FE63D26D330E200525319 /* NewSceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		F28BB66726CFC5AB0061ADF5 /* facebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook@2x.png"; sourceTree = "<group>"; };
 		F28BB66826CFC5AB0061ADF5 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
 		F28BB66926CFC5AC0061ADF5 /* menubar-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar-bg.png"; sourceTree = "<group>"; };
+		F28FE63D26D330E200525319 /* NewSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 			children = (
 				F28BB64426CFA37D0061ADF5 /* AppDelegate.swift */,
 				F28BB64626CFA37D0061ADF5 /* SceneDelegate.swift */,
+				F28FE63D26D330E200525319 /* NewSceneDelegate.swift */,
 				F28BB64826CFA37D0061ADF5 /* ViewController.swift */,
 				F28BB64A26CFA37D0061ADF5 /* Main.storyboard */,
 				F28BB65826CFA46E0061ADF5 /* SecondViewController.swift */,
@@ -207,6 +210,7 @@
 				F28BB64926CFA37D0061ADF5 /* ViewController.swift in Sources */,
 				F28BB65B26CFA4830061ADF5 /* ThirdViewController.swift in Sources */,
 				F28BB64526CFA37D0061ADF5 /* AppDelegate.swift in Sources */,
+				F28FE63E26D330E200525319 /* NewSceneDelegate.swift in Sources */,
 				F28BB64726CFA37D0061ADF5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
