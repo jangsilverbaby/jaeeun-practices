@@ -29,10 +29,18 @@ class ViewController: UIViewController {
         
         // 5. 수퍼 뷰에 추가
         view.addSubview(title)
-            
-        
     }
 
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let tabBar = tabBarController?.tabBar
+        // tabBar?.isHidden = (tabBar?.isHidden == true) ? false : true
+        
+        UIView.animate(withDuration: TimeInterval(0.15)) {
+            // alpha 값이 0이면 1로, 1이면 0으로 바꾸어 준다.
+            // 호출될 때 마다 점점 투명해졌다가 점점 진해질 것이다.
+            tabBar?.alpha = (tabBar?.alpha == 0 ? 1 : 0)
+        }
+    }
 
 }
 
