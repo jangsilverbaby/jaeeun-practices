@@ -92,6 +92,13 @@ class ViewController: UIViewController {
         
         // 타이틀 뷰 속성에 대입
         self.navigationItem.titleView = tf
+        
+        // 왼쪽 아이템 영역에 들어갈 뷰
+        let back = UIImage(named: "arrow-back")
+        let leftItem = UIBarButtonItem(image: back, style: .plain, target: self, action: nil)
+        
+        // 왼쪽 아이템 영역에 이미지 뷰 설정
+        self.navigationItem.leftBarButtonItem = leftItem
     }
 }
 
