@@ -99,6 +99,36 @@ class ViewController: UIViewController {
         
         // 왼쪽 아이템 영역에 이미지 뷰 설정
         self.navigationItem.leftBarButtonItem = leftItem
+        
+        // 1. 오른쪽 아이템 영역에 들어갈 컨테이너 뷰
+        let rv = UIView()
+        rv.frame = CGRect(x: 0, y: 0, width: 70, height: 37)
+        
+        let rItem = UIBarButtonItem(customView: rv)
+        self.navigationItem.rightBarButtonItem = rItem
+        
+        // 2. 카운트 값을 표시할 레이블 구성
+        let cnt = UILabel()
+        cnt.frame = CGRect(x: 10, y: 8, width: 20, height: 20)
+        cnt.font = UIFont.boldSystemFont(ofSize: 10)
+        cnt.textColor = UIColor(red: 0.06, green: 0.06, blue: 0.06, alpha: 1.0)
+        cnt.text = "12"
+        cnt.textAlignment = .center
+        
+        // 외곽선
+        cnt.layer.cornerRadius = 3 // 모서리 둥글게 처리
+        cnt.layer.borderWidth = 2
+        cnt.layer.borderColor = UIColor(red: 0.06, green: 0.06, blue: 0.06, alpha: 1.0).cgColor
+        
+        // 레이블을 서브 뷰로 추가
+        rv.addSubview(cnt)
+        
+        // more 버튼 구현
+        let more = UIButton(type: .system)
+        more.frame = CGRect(x: 50, y: 10, width: 16, height: 16)
+        more.setImage(UIImage(named: "more"), for: .normal)
+        
+        rv.addSubview(more)
     }
 }
 
