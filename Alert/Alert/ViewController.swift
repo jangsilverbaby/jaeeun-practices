@@ -24,7 +24,7 @@ class ViewController: UIViewController {
 
     @objc func defaultAlert(_ sender: Any) {
         // 1. 알림창을 정의한다.
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         // 2. 버튼을 정의한다.
         let cancleAction = UIAlertAction(title: "Cancle", style: .cancel)
