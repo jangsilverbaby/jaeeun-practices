@@ -18,6 +18,7 @@
 		F26013A526D724AD006BD892 /* note.png in Resources */ = {isa = PBXBuildFile; fileRef = F26013A326D724AD006BD892 /* note.png */; };
 		F26013A626D724AD006BD892 /* rating5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F26013A426D724AD006BD892 /* rating5@2x.png */; };
 		F26013A826D724D1006BD892 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26013A726D724D1006BD892 /* ImageViewController.swift */; };
+		F26013AA26D72B1F006BD892 /* ControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26013A926D72B1F006BD892 /* ControlViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		F26013A326D724AD006BD892 /* note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note.png; sourceTree = "<group>"; };
 		F26013A426D724AD006BD892 /* rating5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rating5@2x.png"; sourceTree = "<group>"; };
 		F26013A726D724D1006BD892 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		F26013A926D72B1F006BD892 /* ControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 		F260138926D71143006BD892 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
+				F26013A926D72B1F006BD892 /* ControlViewController.swift */,
 				F26013A726D724D1006BD892 /* ImageViewController.swift */,
 				F260138A26D71143006BD892 /* AppDelegate.swift */,
 				F260138C26D71143006BD892 /* SceneDelegate.swift */,
@@ -168,6 +171,7 @@
 				F260138B26D71143006BD892 /* AppDelegate.swift in Sources */,
 				F26013A826D724D1006BD892 /* ImageViewController.swift in Sources */,
 				F260138D26D71143006BD892 /* SceneDelegate.swift in Sources */,
+				F26013AA26D72B1F006BD892 /* ControlViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
