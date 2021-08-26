@@ -13,6 +13,7 @@
 		F260139226D71143006BD892 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F260139026D71143006BD892 /* Main.storyboard */; };
 		F260139426D71144006BD892 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F260139326D71144006BD892 /* Assets.xcassets */; };
 		F260139726D71144006BD892 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F260139526D71144006BD892 /* LaunchScreen.storyboard */; };
+		F260139F26D71692006BD892 /* MapAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F260139E26D71692006BD892 /* MapAlertViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F260139326D71144006BD892 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F260139626D71144006BD892 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F260139826D71144006BD892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F260139E26D71692006BD892 /* MapAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAlertViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				F260138A26D71143006BD892 /* AppDelegate.swift */,
 				F260138C26D71143006BD892 /* SceneDelegate.swift */,
 				F260138E26D71143006BD892 /* ViewController.swift */,
+				F260139E26D71692006BD892 /* MapAlertViewController.swift */,
 				F260139026D71143006BD892 /* Main.storyboard */,
 				F260139326D71144006BD892 /* Assets.xcassets */,
 				F260139526D71144006BD892 /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F260139F26D71692006BD892 /* MapAlertViewController.swift in Sources */,
 				F260138F26D71143006BD892 /* ViewController.swift in Sources */,
 				F260138B26D71143006BD892 /* AppDelegate.swift in Sources */,
 				F260138D26D71143006BD892 /* SceneDelegate.swift in Sources */,
