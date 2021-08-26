@@ -14,6 +14,7 @@
 		F260139426D71144006BD892 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F260139326D71144006BD892 /* Assets.xcassets */; };
 		F260139726D71144006BD892 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F260139526D71144006BD892 /* LaunchScreen.storyboard */; };
 		F260139F26D71692006BD892 /* MapAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F260139E26D71692006BD892 /* MapAlertViewController.swift */; };
+		F26013A126D7231D006BD892 /* MapKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26013A026D7231D006BD892 /* MapKitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		F260139626D71144006BD892 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F260139826D71144006BD892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F260139E26D71692006BD892 /* MapAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAlertViewController.swift; sourceTree = "<group>"; };
+		F26013A026D7231D006BD892 /* MapKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				F260138C26D71143006BD892 /* SceneDelegate.swift */,
 				F260138E26D71143006BD892 /* ViewController.swift */,
 				F260139E26D71692006BD892 /* MapAlertViewController.swift */,
+				F26013A026D7231D006BD892 /* MapKitViewController.swift */,
 				F260139026D71143006BD892 /* Main.storyboard */,
 				F260139326D71144006BD892 /* Assets.xcassets */,
 				F260139526D71144006BD892 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F260139F26D71692006BD892 /* MapAlertViewController.swift in Sources */,
+				F26013A126D7231D006BD892 /* MapKitViewController.swift in Sources */,
 				F260138F26D71143006BD892 /* ViewController.swift in Sources */,
 				F260138B26D71143006BD892 /* AppDelegate.swift in Sources */,
 				F260138D26D71143006BD892 /* SceneDelegate.swift in Sources */,
