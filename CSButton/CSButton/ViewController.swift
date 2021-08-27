@@ -33,7 +33,5 @@ class ViewController: UIViewController {
         
         circleBtn2.style = .rect // 타원 형태로 정의된 버튼의 스타일을 다시 사각형으로 설정
     }
-
-
 }
 
