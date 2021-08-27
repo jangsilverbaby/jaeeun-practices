@@ -7,6 +7,12 @@
 
 import UIKit
 
+// 버튼 타입을 결정한느 열거형
+public enum CSButtonType {
+    case rect
+    case circle
+}
+
 class CSButton: UIButton {
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
@@ -29,5 +35,45 @@ class CSButton: UIButton {
     
     init() {
         super.init(frame: CGRect.zero)
+    }
+    
+    convenience init(type: CSButtonType) {
+        self.init()
+        
+        switch type {
+        case .rect:
+            self.backgroundColor = .black // 배경을 검정색으로
+            self.layer.borderWidth = 2 // 테두리는 조금 두껍게
+            self.layer.borderColor = UIColor.black.cgColor // 테두리는 검은색으로
+            self.layer.cornerRadius = 0 // 모서리는 전혀 둥글지 않게
+            self.setTitleColor(.white, for: .normal) // 글씨는 흰색으로
+            self.setTitle("Rect Button", for: .normal) // 기본 문구 설정
+        case .circle:
+            self.backgroundColor = .red // 배경을 빨간색으로
+            self.layer.borderWidth = 2 // 테두리는 조금 두껍게
+            self.layer.borderColor = UIColor.black.cgColor // 테두리는 파란색으로
+            self.layer.cornerRadius = 50 // 50만큼 둘글게 처리
+            self.setTitle("Circle Button", for: .normal) // 기본 문구 설정
+        }
+    }
+    
+    var style: CSButtonType = .rect {
+        didSet {
+            switch style {
+            case .rect:
+                self.backgroundColor = .black // 배경을 검정색으로
+                self.layer.borderWidth = 2 // 테두리는 조금 두껍게
+                self.layer.borderColor = UIColor.black.cgColor // 테두리는 검은색으로
+                self.layer.cornerRadius = 0 // 모서리는 전혀 둥글지 않게
+                self.setTitleColor(.white, for: .normal) // 글씨는 흰색으로
+                self.setTitle("Rect Button", for: .normal) // 기본 문구 설정
+            case .circle:
+                self.backgroundColor = .red // 배경을 빨간색으로
+                self.layer.borderWidth = 2 // 테두리는 조금 두껍게
+                self.layer.borderColor = UIColor.black.cgColor // 테두리는 파란색으로
+                self.layer.cornerRadius = 50 // 50만큼 둘글게 처리
+                self.setTitle("Circle Button", for: .normal) // 기본 문구 설정
+            }
+        }
     }
 }
