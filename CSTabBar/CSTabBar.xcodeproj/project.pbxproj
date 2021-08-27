@@ -13,6 +13,7 @@
 		F24CACF226D8D7B50083B222 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F24CACF026D8D7B50083B222 /* Main.storyboard */; };
 		F24CACF426D8D7B80083B222 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F24CACF326D8D7B80083B222 /* Assets.xcassets */; };
 		F24CACF726D8D7B80083B222 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F24CACF526D8D7B80083B222 /* LaunchScreen.storyboard */; };
+		F24CACFF26D8DA290083B222 /* CSTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24CACFE26D8DA290083B222 /* CSTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F24CACF326D8D7B80083B222 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F24CACF626D8D7B80083B222 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F24CACF826D8D7B80083B222 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F24CACFE26D8DA290083B222 /* CSTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				F24CACEC26D8D7B50083B222 /* SceneDelegate.swift */,
 				F24CACEE26D8D7B50083B222 /* ViewController.swift */,
 				F24CACF026D8D7B50083B222 /* Main.storyboard */,
+				F24CACFE26D8DA290083B222 /* CSTabBarController.swift */,
 				F24CACF326D8D7B80083B222 /* Assets.xcassets */,
 				F24CACF526D8D7B80083B222 /* LaunchScreen.storyboard */,
 				F24CACF826D8D7B80083B222 /* Info.plist */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F24CACEF26D8D7B50083B222 /* ViewController.swift in Sources */,
+				F24CACFF26D8DA290083B222 /* CSTabBarController.swift in Sources */,
 				F24CACEB26D8D7B50083B222 /* AppDelegate.swift in Sources */,
 				F24CACED26D8D7B50083B222 /* SceneDelegate.swift in Sources */,
 			);
