@@ -7,6 +7,8 @@
 
 import UIKit
 
+// @IBDesignable 어트리뷰트: 이 클래스를 스토리보드에서 미리보기 형태로 처리해 달라고 시스템에 요청히는 역할
+@IBDesignable
 public class CSStepper: UIView {
     public var leftBtn = UIButton(type: .system) // 좌측 버튼
     public var rightBtn = UIButton(type: .system) // 우측 버튼
