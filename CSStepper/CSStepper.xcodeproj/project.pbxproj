@@ -13,6 +13,7 @@
 		F232CAB126DC57DC00A6C03A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F232CAAF26DC57DC00A6C03A /* Main.storyboard */; };
 		F232CAB326DC57DD00A6C03A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F232CAB226DC57DD00A6C03A /* Assets.xcassets */; };
 		F232CAB626DC57DD00A6C03A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F232CAB426DC57DD00A6C03A /* LaunchScreen.storyboard */; };
+		F232CABE26DC582500A6C03A /* CSStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F232CABD26DC582500A6C03A /* CSStepper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F232CAB226DC57DD00A6C03A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F232CAB526DC57DD00A6C03A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F232CAB726DC57DD00A6C03A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F232CABD26DC582500A6C03A /* CSStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSStepper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				F232CAA926DC57DC00A6C03A /* AppDelegate.swift */,
+				F232CABD26DC582500A6C03A /* CSStepper.swift */,
 				F232CAAB26DC57DC00A6C03A /* SceneDelegate.swift */,
 				F232CAAD26DC57DC00A6C03A /* ViewController.swift */,
 				F232CAAF26DC57DC00A6C03A /* Main.storyboard */,
@@ -140,6 +143,7 @@
 				F232CAAE26DC57DC00A6C03A /* ViewController.swift in Sources */,
 				F232CAAA26DC57DC00A6C03A /* AppDelegate.swift in Sources */,
 				F232CAAC26DC57DC00A6C03A /* SceneDelegate.swift in Sources */,
+				F232CABE26DC582500A6C03A /* CSStepper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
