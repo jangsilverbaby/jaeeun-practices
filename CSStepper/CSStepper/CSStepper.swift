@@ -7,13 +7,18 @@
 
 import UIKit
 
-// @IBDesignable 어트리뷰트: 이 클래스를 스토리보드에서 미리보기 형태로 처리해 달라고 시스템에 요청히는 역할
+// @IBDesignable 어트리뷰트 : 이 클래스를 스토리보드에서 미리보기 형태로 처리해 달라고 시스템에 요청히는 역할
 @IBDesignable
 public class CSStepper: UIView {
     public var leftBtn = UIButton(type: .system) // 좌측 버튼
     public var rightBtn = UIButton(type: .system) // 우측 버튼
     public var centerLabel = UILabel() // 중앙 레이블
-    public var value: Int = 0 // 스테퍼의 현재값을 저장할 변수
+    // 스테퍼의 현재값을 저장할 변수
+    public var value: Int = 0 {
+        didSet { // 프로퍼티 옵저버 : 프로퍼티의 값이 바뀌면 자동으로 호출된다.
+            self.centerLabel.text = String(value)
+        }
+    }
     
     // 스토리보드에서 호출할 초기화 메소드
     public required init?(coder aDecoder: NSCoder) {
@@ -59,6 +64,10 @@ public class CSStepper: UIView {
         self.addSubview(self.leftBtn)
         self.addSubview(self.rightBtn)
         self.addSubview(self.centerLabel)
+        
+        // 버튼의 터치 이벤트와 valueChange(_:) 메소드를 연결한다.
+        self.leftBtn.addTarget(self, action: #selector(valueChange(_:)), for: .touchUpInside)
+        self.rightBtn.addTarget(self, action: #selector(valueChange(_:)), for: .touchUpInside)
     }
     
     // 뷰의 크기가 변할 때 호출되는 메소드
@@ -76,5 +85,11 @@ public class CSStepper: UIView {
         self.centerLabel.frame = CGRect(x: btnWidth, y: 0, width: lblWidth, height: btnWidth)
         self.rightBtn.frame = CGRect(x: btnWidth+lblWidth, y: 0, width: btnWidth, height: btnWidth)
         
+    }
+    
+    // value 속성의 값을 변경하는 메소드
+    @objc public func valueChange(_ sender: UIButton) {
+        // 현재의 value 값에 +1 또는 -1 한다.
+        self.value += sender.tag
     }
 }
