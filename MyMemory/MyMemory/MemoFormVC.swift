@@ -95,4 +95,13 @@ class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         // 이미지 피커 컨트롤러를 닫는다.
         picker.dismiss(animated: false)
     }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let bar = self.navigationController?.navigationBar
+        
+        let ts = TimeInterval(0.3)
+        UIView.animate(withDuration: ts) {
+            bar?.alpha = (bar?.alpha == 0 ? 1 : 0)
+        }
+    }
 }
