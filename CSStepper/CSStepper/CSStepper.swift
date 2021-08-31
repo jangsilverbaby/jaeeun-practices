@@ -15,6 +15,7 @@ public class CSStepper: UIView {
     public var centerLabel = UILabel() // 중앙 레이블
     
     // 증감값 단위
+    @IBInspectable // @IBInspectable 어트리뷰트 : 우리가 정의한 속성을 인터페이스 빌더에서도 설정할 수 있도록 처리해 주는 역할 ※ 프로퍼티에 타입 어노테이션이 선언되어 있어야 사용 가능
     public var stepValue: Int = 1
     
     // 최대값과 최소값
@@ -22,6 +23,7 @@ public class CSStepper: UIView {
     public var minimumValue: Int = -100
     
     // 스테퍼의 현재값을 저장할 변수
+    @IBInspectable
     public var value: Int = 0 {
         didSet { // 프로퍼티 옵저버 : 프로퍼티의 값이 바뀌면 자동으로 호출된다.
             self.centerLabel.text = String(value)
@@ -29,6 +31,7 @@ public class CSStepper: UIView {
     }
     
     // 좌측 버튼의 타이틀 속성
+    @IBInspectable
     public var leftTitle: String = "↓" {
         didSet {
             self.leftBtn.setTitle(leftTitle, for:.normal)
@@ -36,6 +39,7 @@ public class CSStepper: UIView {
     }
     
     // 우측 버튼의 타이틀 속성
+    @IBInspectable
     public var rightTitle: String = "↑" {
         didSet {
             self.rightBtn.setTitle(rightTitle, for: .normal)
@@ -43,6 +47,7 @@ public class CSStepper: UIView {
     }
     
     // 센터 영역의 색상
+    @IBInspectable
     public var bgColor: UIColor = UIColor.cyan {
         didSet {
             self.centerLabel.backgroundColor = backgroundColor
