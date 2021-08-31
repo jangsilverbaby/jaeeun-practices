@@ -9,7 +9,7 @@ import UIKit
 
 // @IBDesignable 어트리뷰트 : 이 클래스를 스토리보드에서 미리보기 형태로 처리해 달라고 시스템에 요청히는 역할
 @IBDesignable
-public class CSStepper: UIView {
+public class CSStepper: UIControl {
     public var leftBtn = UIButton(type: .system) // 좌측 버튼
     public var rightBtn = UIButton(type: .system) // 우측 버튼
     public var centerLabel = UILabel() // 중앙 레이블
@@ -27,6 +27,9 @@ public class CSStepper: UIView {
     public var value: Int = 0 {
         didSet { // 프로퍼티 옵저버 : 프로퍼티의 값이 바뀌면 자동으로 호출된다.
             self.centerLabel.text = String(value)
+            
+            // 이 클래스를 사용하는 객체들에게 valueChanged 이벤트 신호를 보내준다.
+            self.sendActions(for: .valueChanged)
         }
     }
     
