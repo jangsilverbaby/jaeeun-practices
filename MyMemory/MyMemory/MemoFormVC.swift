@@ -15,6 +15,22 @@ class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     
     override func viewDidLoad() {
         self.contents.delegate = self
+        
+        // 배경 이미지 설정
+        let bgImage = UIImage(named: "memo-background.png")!
+        self.view.backgroundColor = UIColor(patternImage: bgImage)
+        
+        // 텍스트 뷰의 기본 속성
+        self.contents.layer.borderWidth = 0 // 테두리 제거
+        self.contents.layer.borderColor = UIColor.clear.cgColor // 색상 제거
+        self.contents.backgroundColor = UIColor.clear // 색상 제거
+        
+        // 줄 간격
+        let style = NSMutableParagraphStyle() // 문단 스타일을 정하는 클래스, 파운데이션 프레임 워크에 정의 돼있음
+        style.lineSpacing = 9 // 줄 간격을 설정하는 속성
+        self.contents.attributedText = NSAttributedString(string: " ", attributes: [.paragraphStyle: style]) // 텍스트 뷰의 attributedText 속성에 NSAttributeString 객체의 속성 형태로 변환하여 대입하면 텍스트 뷰의 중 간격이 설정된다.
+        self.contents.text = ""
+        
     }
     
     // 사용자가 텍스트 뷰에 뭔가를 입력하면 자동으로 이 메소드가 호출된다
