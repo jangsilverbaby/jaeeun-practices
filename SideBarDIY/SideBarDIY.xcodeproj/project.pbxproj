@@ -19,6 +19,9 @@
 		F2AFF96F26E053EC0014A8BB /* icon04.png in Resources */ = {isa = PBXBuildFile; fileRef = F2AFF96926E053EC0014A8BB /* icon04.png */; };
 		F2AFF97026E053EC0014A8BB /* icon05.png in Resources */ = {isa = PBXBuildFile; fileRef = F2AFF96A26E053EC0014A8BB /* icon05.png */; };
 		F2AFF97126E053EC0014A8BB /* sidemenu.png in Resources */ = {isa = PBXBuildFile; fileRef = F2AFF96B26E053EC0014A8BB /* sidemenu.png */; };
+		F2AFF97326E054560014A8BB /* RevealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AFF97226E054560014A8BB /* RevealViewController.swift */; };
+		F2AFF97526E054BC0014A8BB /* FonrtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AFF97426E054BC0014A8BB /* FonrtViewController.swift */; };
+		F2AFF97726E054FC0014A8BB /* SideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AFF97626E054FC0014A8BB /* SideBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		F2AFF96926E053EC0014A8BB /* icon04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon04.png; sourceTree = "<group>"; };
 		F2AFF96A26E053EC0014A8BB /* icon05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon05.png; sourceTree = "<group>"; };
 		F2AFF96B26E053EC0014A8BB /* sidemenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sidemenu.png; sourceTree = "<group>"; };
+		F2AFF97226E054560014A8BB /* RevealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevealViewController.swift; sourceTree = "<group>"; };
+		F2AFF97426E054BC0014A8BB /* FonrtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FonrtViewController.swift; sourceTree = "<group>"; };
+		F2AFF97626E054FC0014A8BB /* SideBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +82,9 @@
 				F2AFF95A26E0534F0014A8BB /* Assets.xcassets */,
 				F2AFF95C26E0534F0014A8BB /* LaunchScreen.storyboard */,
 				F2AFF95F26E0534F0014A8BB /* Info.plist */,
+				F2AFF97226E054560014A8BB /* RevealViewController.swift */,
+				F2AFF97426E054BC0014A8BB /* FonrtViewController.swift */,
+				F2AFF97626E054FC0014A8BB /* SideBarViewController.swift */,
 			);
 			path = SideBarDIY;
 			sourceTree = "<group>";
@@ -170,8 +179,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2AFF95626E0534E0014A8BB /* ViewController.swift in Sources */,
+				F2AFF97726E054FC0014A8BB /* SideBarViewController.swift in Sources */,
 				F2AFF95226E0534E0014A8BB /* AppDelegate.swift in Sources */,
+				F2AFF97526E054BC0014A8BB /* FonrtViewController.swift in Sources */,
 				F2AFF95426E0534E0014A8BB /* SceneDelegate.swift in Sources */,
+				F2AFF97326E054560014A8BB /* RevealViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,7 +339,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.eunae.SideBarDIY;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -345,7 +357,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.eunae.SideBarDIY;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
