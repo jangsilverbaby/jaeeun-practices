@@ -100,6 +100,30 @@ class ReavealViewController: UIViewController {
     
     // 사이드 바를 닫는다.
     func closeSideBar(_ complete: (() -> Void)? ) {
-        
+        // 애니메이션 옵션을 정의한다.
+        let options = UIView.AnimationOptions([.curveEaseInOut, .beginFromCurrentState])
+        // 애니메이션 실행
+        UIView.animate(
+            withDuration: TimeInterval(self.SLIDE_TIME), // 애니메이션 실행 시간(초)
+            delay: TimeInterval(0), // 애니메이션 실행 전에 대기할 시간(초)
+            options: options, // 애니메이션 실행 옵션
+            animations: { // 실행할 애니메이션 실행 옵션
+                // 1. 옆으로 밀려난 콘텐츠 뷰의 위치를 제자리로
+                self.contentVC?.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+            },
+            completion: { // 애니메이션 완료 후 실행해야 할 내용
+                if $0 == true {
+                    // 2. 사이드 바 뷰를 제거한다.
+                    self.sideVC?.view.removeFromSuperview()
+                    self.sideVC = nil
+                    // 3. 닫힘 상태로 플래그를 변경한다.
+                    self.isSideBarShowing = false
+                    // 4. 그림자 효과를 제거한다.
+                    self.setShadowEffect(shadow: false, offset: 0)
+                    // 5. 인자값으로 입력받은 완려 함수를 실행한다.
+                    complete?()
+                }
+            }
+        )
     }
 }
