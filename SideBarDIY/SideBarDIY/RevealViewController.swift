@@ -62,7 +62,16 @@ class ReavealViewController: UIViewController {
     
     // 콘텐츠 뷰에 그림자 효과를 준다.
     func setShadowEffect(shadow: Bool, offset:CGFloat) {
-        
+        if (shadow == true) { // 그림자 효과 설정
+            self.contentVC?.view.layer.masksToBounds = false
+            self.contentVC?.view.layer.cornerRadius = 10 // 그림자 모서리 둥글기
+            self.contentVC?.view.layer.shadowOpacity = 0.8 // 그림자 투명도
+            self.contentVC?.view.layer.shadowColor = UIColor.black.cgColor // 그림자 색상
+            self.contentVC?.view.layer.shadowOffset = CGSize(width: offset, height: offset) // 그림자 크기
+        } else {
+            self.contentVC?.view.layer.cornerRadius = 0.0;
+            self.contentVC?.view.layer.shadowOffset = CGSize(width: 0, height: 0)
+        }
     }
     
     // 사이드 바를 연다.
