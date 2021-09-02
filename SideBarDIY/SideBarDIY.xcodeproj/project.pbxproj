@@ -13,6 +13,12 @@
 		F2AFF95926E0534E0014A8BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2AFF95726E0534E0014A8BB /* Main.storyboard */; };
 		F2AFF95B26E0534F0014A8BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2AFF95A26E0534F0014A8BB /* Assets.xcassets */; };
 		F2AFF95E26E0534F0014A8BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2AFF95C26E0534F0014A8BB /* LaunchScreen.storyboard */; };
+		F2AFF96C26E053EC0014A8BB /* icon02.png in Resources */ = {isa = PBXBuildFile; fileRef = F2AFF96626E053EC0014A8BB /* icon02.png */; };
+		F2AFF96D26E053EC0014A8BB /* icon03.png in Resources */ = {isa = PBXBuildFile; fileRef = F2AFF96726E053EC0014A8BB /* icon03.png */; };
+		F2AFF96E26E053EC0014A8BB /* icon01.png in Resources */ = {isa = PBXBuildFile; fileRef = F2AFF96826E053EC0014A8BB /* icon01.png */; };
+		F2AFF96F26E053EC0014A8BB /* icon04.png in Resources */ = {isa = PBXBuildFile; fileRef = F2AFF96926E053EC0014A8BB /* icon04.png */; };
+		F2AFF97026E053EC0014A8BB /* icon05.png in Resources */ = {isa = PBXBuildFile; fileRef = F2AFF96A26E053EC0014A8BB /* icon05.png */; };
+		F2AFF97126E053EC0014A8BB /* sidemenu.png in Resources */ = {isa = PBXBuildFile; fileRef = F2AFF96B26E053EC0014A8BB /* sidemenu.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		F2AFF95A26E0534F0014A8BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2AFF95D26E0534F0014A8BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2AFF95F26E0534F0014A8BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2AFF96626E053EC0014A8BB /* icon02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon02.png; sourceTree = "<group>"; };
+		F2AFF96726E053EC0014A8BB /* icon03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon03.png; sourceTree = "<group>"; };
+		F2AFF96826E053EC0014A8BB /* icon01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon01.png; sourceTree = "<group>"; };
+		F2AFF96926E053EC0014A8BB /* icon04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon04.png; sourceTree = "<group>"; };
+		F2AFF96A26E053EC0014A8BB /* icon05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon05.png; sourceTree = "<group>"; };
+		F2AFF96B26E053EC0014A8BB /* sidemenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sidemenu.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +52,7 @@
 		F2AFF94526E0534E0014A8BB = {
 			isa = PBXGroup;
 			children = (
+				F2AFF96526E053EC0014A8BB /* Resources */,
 				F2AFF95026E0534E0014A8BB /* SideBarDIY */,
 				F2AFF94F26E0534E0014A8BB /* Products */,
 			);
@@ -65,6 +78,19 @@
 				F2AFF95F26E0534F0014A8BB /* Info.plist */,
 			);
 			path = SideBarDIY;
+			sourceTree = "<group>";
+		};
+		F2AFF96526E053EC0014A8BB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F2AFF96626E053EC0014A8BB /* icon02.png */,
+				F2AFF96726E053EC0014A8BB /* icon03.png */,
+				F2AFF96826E053EC0014A8BB /* icon01.png */,
+				F2AFF96926E053EC0014A8BB /* icon04.png */,
+				F2AFF96A26E053EC0014A8BB /* icon05.png */,
+				F2AFF96B26E053EC0014A8BB /* sidemenu.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,9 +150,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2AFF96C26E053EC0014A8BB /* icon02.png in Resources */,
+				F2AFF96F26E053EC0014A8BB /* icon04.png in Resources */,
 				F2AFF95E26E0534F0014A8BB /* LaunchScreen.storyboard in Resources */,
+				F2AFF97126E053EC0014A8BB /* sidemenu.png in Resources */,
+				F2AFF97026E053EC0014A8BB /* icon05.png in Resources */,
 				F2AFF95B26E0534F0014A8BB /* Assets.xcassets in Resources */,
 				F2AFF95926E0534E0014A8BB /* Main.storyboard in Resources */,
+				F2AFF96D26E053EC0014A8BB /* icon03.png in Resources */,
+				F2AFF96E26E053EC0014A8BB /* icon01.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
