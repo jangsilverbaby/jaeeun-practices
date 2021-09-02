@@ -40,7 +40,7 @@ class ReavealViewController: UIViewController {
         guard self.sideVC == nil else {
             return
         }
-        
+
         // 1. 사이드 바 컨트롤러 객체를 읽어온다.
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "sw_rear") else {
             return
@@ -76,7 +76,26 @@ class ReavealViewController: UIViewController {
     
     // 사이드 바를 연다.
     func openSideBar(_ complete: (() -> Void)? ) {
-        
+        // 1. 앞에서 정의했던 메소드들을 실행
+        self.getSideView() // 사이드 바 뷰를 읽어온다.
+        self.setShadowEffect(shadow: true, offset: -2) // 그림자 효과를 준다.
+        // 2. 애니메이션 옵션
+        let options = UIView.AnimationOptions([.curveEaseInOut, .beginFromCurrentState])
+        // 3. 애니메이션 실행
+        UIView.animate(
+            withDuration: TimeInterval(self.SLIDE_TIME), // 애니메이션 실행 시간(초)
+            delay: TimeInterval(0), // 애니메이션 실행 전에 대기할 시간(초)
+            options: options, // 애니메이션 실행 옵션
+            animations: { // 실행할 애니메이션 실행 옵션
+                self.contentVC?.view.frame = CGRect(x: self.SIDEBAR_WIDTH, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+            },
+            completion: { // 애니메이션 완료 후 실행해야 할 내용
+                if $0 == true {
+                    self.isSideBarShowing = true // 열림 상태로 플래그를 변경한다.
+                    complete?()
+                }
+            }
+        )
     }
     
     // 사이드 바를 닫는다.
