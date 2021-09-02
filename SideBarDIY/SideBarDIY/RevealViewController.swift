@@ -37,7 +37,27 @@ class ReavealViewController: UIViewController {
     
     // 사이드 바의 뷰를 읽어온다.
     func getSideView() {
+        guard self.sideVC == nil else {
+            return
+        }
         
+        // 1. 사이드 바 컨트롤러 객체를 읽어온다.
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "sw_rear") else {
+            return
+        }
+        
+        // 2. 다른 메소드에서도 참조할 수 있도록 sideVC 속성에 저장한다.
+        self.sideVC = vc
+        
+        // 3. 읽어온 사이드 바 컨트롤러 객체를 컨테이너 뷰 컨트롤러에 연결한다.
+        self.addChild(vc)
+        self.view.addSubview(vc.view)
+        
+        // 4. _프론트 컨트롤러에 부모 뷰 컨트롤러가 바뀌었음을 알려준다.
+        vc.didMove(toParent: self)
+        
+        // 5. _프론트 컨트롤러의 뷰를 제일 위로 올린다.
+        self.view.bringSubviewToFront((self.contentVC?.view)!)
     }
     
     // 콘텐츠 뷰에 그림자 효과를 준다.
