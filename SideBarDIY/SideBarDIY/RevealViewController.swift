@@ -32,6 +32,10 @@ class ReavealViewController: UIViewController {
             // 뷰와 뷰 컨트롤러 계층은 서로 분리되어있다. 즉, 독립 구조.
             // _프론트 컨트롤러에 부모 뷰 컨트롤러가 바뀌었음을 알려준다.
             vc.didMove(toParent: self)
+            
+            // 4. 프론트 컨트롤러의 델리게이트 변수에 참조 정보를 넣어준다.
+            let frontVC = vc.viewControllers[0] as? FrontViewController
+            frontVC?.delegate = self
         }
     }
     
@@ -113,7 +117,7 @@ class ReavealViewController: UIViewController {
             },
             completion: { // 애니메이션 완료 후 실행해야 할 내용
                 if $0 == true {
-                    // 2. 사이드 바 뷰를 제거한다.
+                    // 2. 다시 열리기 전까지는 사용되지 않으므로 메모리 낭비를 막기 위해 사이드 바 뷰를 제거한다.
                     self.sideVC?.view.removeFromSuperview()
                     self.sideVC = nil
                     // 3. 닫힘 상태로 플래그를 변경한다.
