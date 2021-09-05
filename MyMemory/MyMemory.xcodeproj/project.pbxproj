@@ -12,6 +12,7 @@
 		F209D7E726C4D5C900EF498C /* MemoReadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F209D7E626C4D5C900EF498C /* MemoReadVC.swift */; };
 		F209D7E926C4D64800EF498C /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F209D7E826C4D64800EF498C /* MemoCell.swift */; };
 		F209D7EB26C4D76300EF498C /* MemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F209D7EA26C4D76300EF498C /* MemoData.swift */; };
+		F20D40FA26E2EFD60055E833 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F20D40F826E2EFD60055E833 /* SWRevealViewController.m */; };
 		F232CAC026DE267000A6C03A /* CSLogButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F232CABF26DE267000A6C03A /* CSLogButton.swift */; };
 		F232CAE726DE4E4400A6C03A /* profile-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = F232CADB26DE4E4400A6C03A /* profile-bg.png */; };
 		F232CAE826DE4E4400A6C03A /* icon02.png in Resources */ = {isa = PBXBuildFile; fileRef = F232CADC26DE4E4400A6C03A /* icon02.png */; };
@@ -39,6 +40,9 @@
 		F209D7E626C4D5C900EF498C /* MemoReadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoReadVC.swift; sourceTree = "<group>"; };
 		F209D7E826C4D64800EF498C /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
 		F209D7EA26C4D76300EF498C /* MemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoData.swift; sourceTree = "<group>"; };
+		F20D40F726E2EFD50055E833 /* MyMemory-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyMemory-Bridging-Header.h"; sourceTree = "<group>"; };
+		F20D40F826E2EFD60055E833 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		F20D40F926E2EFD60055E833 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		F232CABF26DE267000A6C03A /* CSLogButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSLogButton.swift; sourceTree = "<group>"; };
 		F232CADB26DE4E4400A6C03A /* profile-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-bg.png"; sourceTree = "<group>"; };
 		F232CADC26DE4E4400A6C03A /* icon02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon02.png; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 		F2F7989C26C3BC03007BA537 /* MyMemory */ = {
 			isa = PBXGroup;
 			children = (
+				F20D40F926E2EFD60055E833 /* SWRevealViewController.h */,
+				F20D40F826E2EFD60055E833 /* SWRevealViewController.m */,
 				F232CABF26DE267000A6C03A /* CSLogButton.swift */,
 				F2F7989D26C3BC03007BA537 /* AppDelegate.swift */,
 				F2F7989F26C3BC03007BA537 /* SceneDelegate.swift */,
@@ -125,6 +131,7 @@
 				F209D7E626C4D5C900EF498C /* MemoReadVC.swift */,
 				F209D7E826C4D64800EF498C /* MemoCell.swift */,
 				F209D7EA26C4D76300EF498C /* MemoData.swift */,
+				F20D40F726E2EFD50055E833 /* MyMemory-Bridging-Header.h */,
 			);
 			path = MyMemory;
 			sourceTree = "<group>";
@@ -160,6 +167,7 @@
 				TargetAttributes = {
 					F2F7989926C3BC03007BA537 = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -218,6 +226,7 @@
 				F209D7E526C4D5A300EF498C /* MemoFormVC.swift in Sources */,
 				F209D7E726C4D5C900EF498C /* MemoReadVC.swift in Sources */,
 				F2F7989E26C3BC03007BA537 /* AppDelegate.swift in Sources */,
+				F20D40FA26E2EFD60055E833 /* SWRevealViewController.m in Sources */,
 				F209D7E326C4D55800EF498C /* MemoListVC.swift in Sources */,
 				F2F798A026C3BC03007BA537 /* SceneDelegate.swift in Sources */,
 			);
@@ -366,6 +375,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MyMemory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -374,6 +384,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.eunae.MyMemory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyMemory/MyMemory-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -384,6 +396,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MyMemory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -392,6 +405,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.eunae.MyMemory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyMemory/MyMemory-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
