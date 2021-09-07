@@ -78,4 +78,15 @@ class SideBarVC: UITableViewController {
         cell.textLabel?.font = UIFont.systemFont(ofSize: 14)
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 { // 선택된 행이 새글 작성 메뉴일 때
+            let uv = self.storyboard?.instantiateViewController(identifier: "MemoForm")
+            let target = self.revealViewController().frontViewController as! UINavigationController
+            target.pushViewController(uv!, animated: true)
+            
+            // 사이드 바를 닫아준다.
+            self.revealViewController().revealToggle(self)
+        }
+    }
 }
