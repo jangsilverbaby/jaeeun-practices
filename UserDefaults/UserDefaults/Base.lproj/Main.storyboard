@@ -104,9 +104,9 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="사용자 정보" id="5xz-lD-HRC"/>
                     <connections>
-                        <outlet property="gender" destination="DaP-Wh-kRq" id="rO5-bo-TKc"/>
-                        <outlet property="married" destination="vHG-Qi-M6T" id="vTX-Yh-swd"/>
-                        <outlet property="name" destination="2TD-Yh-lor" id="aoZ-lL-dRg"/>
+                        <outlet property="gender" destination="kuE-LA-y1u" id="8AA-nN-Vrh"/>
+                        <outlet property="married" destination="VXp-O1-jh6" id="kPu-HI-xnU"/>
+                        <outlet property="name" destination="Z5L-Ow-jGG" id="I9v-qT-EaH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KjZ-KT-mG5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
