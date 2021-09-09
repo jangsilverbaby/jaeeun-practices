@@ -10,7 +10,7 @@
         <!--사용자 정보-->
         <scene sceneID="Kmh-0P-ATq">
             <objects>
-                <tableViewController id="YSe-hy-uCL" sceneMemberID="viewController">
+                <tableViewController id="YSe-hy-uCL" customClass="ListViewController" customModule="UserDefaults" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="KBA-eF-mwE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,6 +63,9 @@
                                                         <segment title="남"/>
                                                         <segment title="여"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="changeGender:" destination="YSe-hy-uCL" eventType="valueChanged" id="US4-QJ-iXe"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -84,6 +87,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VXp-O1-jh6">
                                                     <rect key="frame" x="345" y="6" width="49" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="changeMarried:" destination="YSe-hy-uCL" eventType="valueChanged" id="Yg0-bg-jkh"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -97,6 +103,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="사용자 정보" id="5xz-lD-HRC"/>
+                    <connections>
+                        <outlet property="gender" destination="DaP-Wh-kRq" id="rO5-bo-TKc"/>
+                        <outlet property="married" destination="vHG-Qi-M6T" id="vTX-Yh-swd"/>
+                        <outlet property="name" destination="2TD-Yh-lor" id="aoZ-lL-dRg"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KjZ-KT-mG5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
