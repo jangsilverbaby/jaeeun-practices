@@ -34,8 +34,11 @@ class ListViewController : UITableViewController, UIPickerViewDelegate, UIPicker
         done.target = self
         done.action = #selector(pickerDone)
         
+        // 가변 폭 버튼 정의
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
         // 버튼을 툴 바에 추가
-        toolbar.setItems([done], animated: true)
+        toolbar.setItems([flexSpace, done], animated: true)
     }
     
     // 생성할 컴포넌트의 개수를 정의합니다.
