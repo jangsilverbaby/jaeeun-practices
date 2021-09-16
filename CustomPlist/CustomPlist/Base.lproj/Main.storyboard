@@ -122,6 +122,9 @@
                     <navigationItem key="navigationItem" title="Root View Controller" id="1Pi-JZ-4XT"/>
                     <connections>
                         <outlet property="account" destination="bl9-K8-JUF" id="OlV-Kw-HcT"/>
+                        <outlet property="gender" destination="bXn-Ln-tfR" id="Acc-mS-N8p"/>
+                        <outlet property="married" destination="9zz-4x-oIr" id="egP-gj-IOA"/>
+                        <outlet property="name" destination="lJ0-n1-XoH" id="KE1-PM-ai4"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hxw-vF-56v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

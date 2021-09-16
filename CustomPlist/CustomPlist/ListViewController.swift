@@ -8,7 +8,10 @@
 import UIKit
 
 class ListViewController : UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    @IBOutlet weak var account: UITextField!
+    @IBOutlet weak var account: UITextField! // 계정
+    @IBOutlet weak var name: UILabel! // 이름
+    @IBOutlet weak var gender: UISegmentedControl! // 성별
+    @IBOutlet weak var married: UISwitch! //결혼 여부
     
     var accountlist = [String]()
     
@@ -45,6 +48,14 @@ class ListViewController : UITableViewController, UIPickerViewDelegate, UIPicker
         
         // 버튼을 툴 바에 추가
         toolbar.setItems([new, flexSpace, done], animated: true)
+        
+        // 기본 저장소 객체 불러오기
+        let plist = UserDefaults.standard
+        
+        // 불러온 값을 설정
+        self.name.text = plist.string(forKey: "name") // 이름
+        self.married.isOn = plist.bool(forKey: "married") // 결혼 여부
+        self.gender.selectedSegmentIndex = plist.integer(forKey: "gender") // 성별
     }
     
     // 생성할 컴포넌트의 개수를 정의합니다.
@@ -92,9 +103,52 @@ class ListViewController : UITableViewController, UIPickerViewDelegate, UIPicker
                 self.accountlist.append(account)
                 // 계정 텍스트 필드에 표시한다.
                 self.account.text = account
+                
+                // 컨트롤 값을 모두 초기화한다.
+                self.name.text = ""
+                self.gender.selectedSegmentIndex = 0
+                self.married.isOn = false
             }
         })
         // 알림창 오픈
         self.present(alert, animated: false, completion: nil)
+    }
+    
+    @IBAction func changeGender(_ sender: UISegmentedControl) {
+        let value = sender.selectedSegmentIndex // 0이면 남자, 1이면 여자
+        let plist = UserDefaults.standard // 기본 저장소 객체를 가져온다.
+        plist.set(value, forKey: "gender") // "gender"라는 키로 값을 저장한다.
+        plist.synchronize() // 동기화 처리
+    }
+    
+    @IBAction func changeMarried(_ sender: UISwitch) {
+        let value = sender.isOn // true이면 기혼, false면 미혼
+        let plist = UserDefaults.standard // 기본 저장소 객체를 가져온다.
+        plist.set(value, forKey: "married") // "married"라는 키로 값을 저장한다.
+        plist.synchronize() // 동기화 처리
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 1 { // 두 번째 섹이 클릭되었을 때에만
+            let alert = UIAlertController(title: nil, message: "이름을 입력하세요", preferredStyle: .alert)
+            // 입력 필드 추가
+            alert.addTextField() {
+                $0.text = self.name.text // name 레이블의 텍스트를 입력폼에 기본값으로 넣어준다.
+            }
+            
+            // 버튼 및 액션 추가
+            alert.addAction(UIAlertAction(title: "OK", style: .default) { (_) in
+                // 사용자가 OK 버튼을 누르면 입력 필드에 입력된 값을 저장한다.
+                let value = alert.textFields?[0].text
+                
+                let plist = UserDefaults.standard // 기본 저장소를 가져온다.
+                plist.setValue(value, forKey: "name") // "name"이라는 키로 값을 저장한다.
+                plist.synchronize() // 동기화 처리
+                
+                self.name.text = value
+            })
+            // 알림창 띄움
+            self.present(alert, animated: false, completion: nil)
+        }
     }
 }
