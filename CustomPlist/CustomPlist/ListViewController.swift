@@ -10,7 +10,7 @@ import UIKit
 class ListViewController : UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var account: UITextField!
     
-    var accountlist = ["sqlpro@naver.com", "webmaster@rubypaper.co.kr", "abc1@gmail.com", "abc2@gmail.com", "abc3@gmail.com" ]
+    var accountlist = [String]()
     
     override func viewDidLoad() {
         let picker = UIPickerView()
@@ -22,7 +22,7 @@ class ListViewController : UITableViewController, UIPickerViewDelegate, UIPicker
         
         // 툴 바 객체 정의
         let toolbar = UIToolbar()
-        toolbar.frame = CGRect(x: 0, y: 0, width: 0, height: 35)
+        toolbar.frame = CGRect(x: 0, y: 0, width: 0, height: 36)
         toolbar.barTintColor = .lightGray
         
         // 액세서리 뷰 영역에 툴바를 표시
@@ -37,8 +37,14 @@ class ListViewController : UITableViewController, UIPickerViewDelegate, UIPicker
         // 가변 폭 버튼 정의
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         
+        // 신규 계정 등록 버튼
+        let new = UIBarButtonItem()
+        new.title = "New"
+        new.target = self
+        new.action = #selector(newAccount(_:))
+        
         // 버튼을 툴 바에 추가
-        toolbar.setItems([flexSpace, done], animated: true)
+        toolbar.setItems([new, flexSpace, done], animated: true)
     }
     
     // 생성할 컴포넌트의 개수를 정의합니다.
@@ -66,5 +72,29 @@ class ListViewController : UITableViewController, UIPickerViewDelegate, UIPicker
     @objc func pickerDone(_ sender: Any) {
         // 2. 입력 뷰를 닫음
         self.view.endEditing(true)
+    }
+    
+    @objc func newAccount(_ sender: Any) {
+        self.view.endEditing(true) // 일단 열려있는 입역용 뷰부터 닫아준다.
+        
+        // 알림창에 객체 생성
+        let alert = UIAlertController(title: "새 계정을 입력하세요", message: nil, preferredStyle: .alert)
+        
+        // 입력폼 추가
+        alert.addTextField() {
+            $0.placeholder = "ex) abc@gmail.com"
+        }
+        
+        // 버튼 및 액션 정의
+        alert.addAction(UIAlertAction(title: "OK", style: .default) { (_) in
+            if let account = alert.textFields?[0].text {
+                // 계정 목록 배열에 추가한다.
+                self.accountlist.append(account)
+                // 계정 텍스트 필드에 표시한다.
+                self.account.text = account
+            }
+        })
+        // 알림창 오픈
+        self.present(alert, animated: false, completion: nil)
     }
 }
