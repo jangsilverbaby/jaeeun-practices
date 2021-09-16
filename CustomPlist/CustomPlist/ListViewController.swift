@@ -77,6 +77,16 @@ class ListViewController : UITableViewController, UIPickerViewDelegate, UIPicker
             // 6. "married" 키에 저장된 값을 꺼내어 스위치 컨트롤에 세팅한다. 만약 값이 없다면 false로 설정한다.
             self.married.isOn = data?["married"] as? Bool ?? false
         }
+        
+        if (self.account.text?.isEmpty)! {
+            self.account.placeholder = "등록된 계정이 없습니다."
+            self.gender.isEnabled = false
+            self.married.isEnabled = false
+        }
+        
+        // 내비게이션 바에 newAccount 메소드와 연결된 버튼을 추가한다.
+        let addBtn = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(newAccount(_:)))
+        self.navigationItem.rightBarButtonItems = [addBtn]
     }
     
     // 생성할 컴포넌트의 개수를 정의합니다.
@@ -153,6 +163,10 @@ class ListViewController : UITableViewController, UIPickerViewDelegate, UIPicker
                 plist.set(self.accountlist, forKey: "accountlist")
                 plist.set(account, forKey: "seletedAccount")
                 plist.synchronize()
+                
+                // 입력 항목을 활성화한다.
+                self.gender.isEnabled = true
+                self.married.isEnabled = true
             }
         })
         // 알림창 오픈
@@ -192,7 +206,7 @@ class ListViewController : UITableViewController, UIPickerViewDelegate, UIPicker
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 1 { // 두 번째 섹이 클릭되었을 때에만
+        if indexPath.row == 1 && !(self.account.text?.isEmpty)! { // 두 번째 섹이 클릭되었을 때에만
             let alert = UIAlertController(title: nil, message: "이름을 입력하세요", preferredStyle: .alert)
             // 입력 필드 추가
             alert.addTextField() {
