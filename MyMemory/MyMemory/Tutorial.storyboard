@@ -22,7 +22,10 @@
                                     <constraint firstAttribute="height" constant="30" id="6be-mX-sUI"/>
                                     <constraint firstAttribute="width" constant="100" id="Zcu-F7-6wt"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="시작하기"/>
+                                <connections>
+                                    <action selector="close:" destination="0aK-zA-04I" eventType="touchUpInside" id="v4K-8W-smS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hL1-yw-L45"/>
@@ -45,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="-957" y="48"/>
         </scene>
-        <!--Tutorial ContentVC-->
+        <!--Tutorial ContentsVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="ContentsVC" id="Y6W-OH-hqX" customClass="TutorialContentVC" customModule="MyMemory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContentsVC" id="Y6W-OH-hqX" customClass="TutorialContentsVC" customModule="MyMemory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

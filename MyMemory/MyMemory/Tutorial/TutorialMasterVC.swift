@@ -13,14 +13,22 @@ class TutorialMasterVC: UIViewController, UIPageViewControllerDataSource {
     var contentTitles = ["STEP1","STEP2","STEP3","STEP4"]
     var contentImages = ["Page0","Page1","Page2","Page3"]
     
+    @IBAction func close(_ sender: Any) {
+        let ud = UserDefaults.standard
+        ud.set(true, forKey: UserInfoKey.tutorial)
+        ud.synchronize()
+        
+        self.presentingViewController?.dismiss(animated: true)
+    }
+    
     override func viewDidLoad() {
         // 1. 페이지 뷰 컨트롤러 객체 생성하기
         self.pageVC = self.instanceTutorialVC(name: "PageVC") as? UIPageViewController
         self.pageVC.dataSource = self
         
         // 2. 페이지 뷰 컨트롤러의 기본 페이지 지정
-        let startContnetVC = self.getContentVC(atIndex: 0)! // 최초 노출될 콘텐츠 뷰 컨트롤러
-        self.pageVC.setViewControllers([startContnetVC], direction: .forward, animated: true)
+        let startContentVC = self.getContentVC(atIndex: 0)! // 최초 노출될 콘텐츠 뷰 컨트롤러
+        self.pageVC.setViewControllers([startContentVC], direction: .forward, animated: true)
         
         // 3. 페이지 뷰 컨트롤러의 출력 영역 지정
         self.pageVC.view.frame.origin = CGPoint(x: 0, y: 0)
