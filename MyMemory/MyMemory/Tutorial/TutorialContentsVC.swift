@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TutorialContentVC: UIViewController {
+class TutorialContentsVC: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bgImageView: UIImageView!
     

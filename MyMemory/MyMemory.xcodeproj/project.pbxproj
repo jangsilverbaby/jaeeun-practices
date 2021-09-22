@@ -30,6 +30,7 @@
 		F2AB5C9026FACA2000685C5D /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2AB5C8F26FACA2000685C5D /* Tutorial.storyboard */; };
 		F2AB5C9226FAE2AD00685C5D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AB5C9126FAE2AD00685C5D /* Utils.swift */; };
 		F2AB5C9426FAF2EA00685C5D /* TutorialContentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AB5C9326FAF2EA00685C5D /* TutorialContentsVC.swift */; };
+		F2AB5C9726FB04B200685C5D /* TutorialMasterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AB5C9626FB04B200685C5D /* TutorialMasterVC.swift */; };
 		F2BBA43926E4DA8D002AD282 /* SideBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BBA43826E4DA8D002AD282 /* SideBarVC.swift */; };
 		F2D723B726E718D800B4B449 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D723B626E718D800B4B449 /* ProfileVC.swift */; };
 		F2F7989E26C3BC03007BA537 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F7989D26C3BC03007BA537 /* AppDelegate.swift */; };
@@ -66,6 +67,7 @@
 		F2AB5C8F26FACA2000685C5D /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		F2AB5C9126FAE2AD00685C5D /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		F2AB5C9326FAF2EA00685C5D /* TutorialContentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialContentsVC.swift; sourceTree = "<group>"; };
+		F2AB5C9626FB04B200685C5D /* TutorialMasterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialMasterVC.swift; sourceTree = "<group>"; };
 		F2BBA43826E4DA8D002AD282 /* SideBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarVC.swift; sourceTree = "<group>"; };
 		F2D723B626E718D800B4B449 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		F2F7989A26C3BC03007BA537 /* MyMemory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				F2AB5C9326FAF2EA00685C5D /* TutorialContentsVC.swift */,
+				F2AB5C9626FB04B200685C5D /* TutorialMasterVC.swift */,
 			);
 			path = Tutorial;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				F209D7E526C4D5A300EF498C /* MemoFormVC.swift in Sources */,
 				F209D7E726C4D5C900EF498C /* MemoReadVC.swift in Sources */,
 				F2F7989E26C3BC03007BA537 /* AppDelegate.swift in Sources */,
+				F2AB5C9726FB04B200685C5D /* TutorialMasterVC.swift in Sources */,
 				F20D40FA26E2EFD60055E833 /* SWRevealViewController.m in Sources */,
 				F209D7E326C4D55800EF498C /* MemoListVC.swift in Sources */,
 				F249A3A326F46B4B00BD5528 /* UserInfoManager.swift in Sources */,
