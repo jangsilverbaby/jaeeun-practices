@@ -15,9 +15,10 @@ class ViewController: UIViewController {
         var stmt: OpaquePointer? = nil // 컴파일된 SQL을 담을 객체
         
         // 앱 내 문서 디렉터리 경로에서 SQLite DB 파일을 찾는다.
-        let fileMgr = FileManager() // 파일 매니저 객체 생성
-        let docPathURL = fileMgr.urls(for: .documentDirectory, in: .userDomainMask).first! // 생성된 매니저 객체를 사용하여 앱 내의 문서 디렉터리 경로를 찾고, 이를 URL 객체로 생성합니다.
-        let dbPath = docPathURL.appendingPathComponent("db.sqlite").path // URL 객체에 "db.sqlite" 팡리 경로를 추가한 SQLite3 데이터베이스 경로를 만들어 냅니다.
+        //let fileMgr = FileManager() // 파일 매니저 객체 생성
+        //let docPathURL = fileMgr.urls(for: .documentDirectory, in: .userDomainMask).first! // 생성된 매니저 객체를 사용하여 앱 내의 문서 디렉터리 경로를 찾고, 이를 URL 객체로 생성합니다.
+        //let dbPath = docPathURL.appendingPathComponent("db.sqlite").path // URL 객체에 "db.sqlite" 팡리 경로를 추가한 SQLite3 데이터베이스 경로를 만들어 냅니다.
+        let dbPath = "/Users/eunae/Developer/SQLite-workspace/db.sqlite" // 작성한 구문들이 데이터베이스에서 제대로 실행되었는지 여부를 확인하기 위한 임시 작업
         
         let sql = "CREATE TABLE IF NOT EXISTS sequence (num INTEGER)"
         
