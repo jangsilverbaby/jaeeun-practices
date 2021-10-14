@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cj-yd-ZaN">
-                                <rect key="frame" x="157" y="812" width="100" height="30"/>
+                                <rect key="frame" x="157" y="782" width="100" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="6be-mX-sUI"/>
                                     <constraint firstAttribute="width" constant="100" id="Zcu-F7-6wt"/>
@@ -32,7 +33,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="7cj-yd-ZaN" firstAttribute="centerX" secondItem="Iyg-T6-OTT" secondAttribute="centerX" id="0fT-pW-xuX"/>
-                            <constraint firstItem="hL1-yw-L45" firstAttribute="bottom" secondItem="7cj-yd-ZaN" secondAttribute="bottom" constant="20" id="mZq-q0-gG9"/>
+                            <constraint firstItem="hL1-yw-L45" firstAttribute="bottom" secondItem="7cj-yd-ZaN" secondAttribute="bottom" constant="50" id="Vmh-ft-lwB"/>
                         </constraints>
                     </view>
                 </viewController>

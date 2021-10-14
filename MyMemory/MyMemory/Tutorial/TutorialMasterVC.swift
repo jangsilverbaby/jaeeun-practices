@@ -39,6 +39,7 @@ class TutorialMasterVC: UIViewController, UIPageViewControllerDataSource {
         // 4. 페이지 뷰 컨트롤러를 마스터 뷰 컨트롤러의 자식 뷰 컨트롤러로 설정
         self.addChild(self.pageVC) // 페이지 뷰 컨트롤러를 자식 컨트롤러로 등록
         self.view.addSubview(self.pageVC.view) // 그 컨트롤러의 뷰를 현재의 서브 뷰로 추가
+        self.view.sendSubviewToBack(self.pageVC.view)
         self.pageVC.didMove(toParent: self) // 자식 뷰 컨트롤러에게 부모 뷰 컨트롤러가 바뀌었음을 알려줌
     }
     
