@@ -20,6 +20,8 @@
 		F2E2BB5E271D41F000568DF9 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E2BB58271D41F000568DF9 /* FMResultSet.m */; };
 		F2E2BB5F271D41F000568DF9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2E2BB59271D41F000568DF9 /* Info.plist */; };
 		F2E2BB62271D420300568DF9 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F2E2BB61271D420300568DF9 /* libsqlite3.tbd */; };
+		F2E2BB65271D520F00568DF9 /* DepartmentListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2BB64271D520F00568DF9 /* DepartmentListVC.swift */; };
+		F2E2BB67271D524800568DF9 /* EmployeeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2BB66271D524800568DF9 /* EmployeeListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		F2E2BB59271D41F000568DF9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2E2BB61271D420300568DF9 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		F2E2BB63271D424400568DF9 /* HR-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HR-Bridging-Header.h"; sourceTree = "<group>"; };
+		F2E2BB64271D520F00568DF9 /* DepartmentListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentListVC.swift; sourceTree = "<group>"; };
+		F2E2BB66271D524800568DF9 /* EmployeeListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,8 @@
 				F2E2BB44271D41C400568DF9 /* LaunchScreen.storyboard */,
 				F2E2BB47271D41C400568DF9 /* Info.plist */,
 				F2E2BB63271D424400568DF9 /* HR-Bridging-Header.h */,
+				F2E2BB64271D520F00568DF9 /* DepartmentListVC.swift */,
+				F2E2BB66271D524800568DF9 /* EmployeeListVC.swift */,
 			);
 			path = HR;
 			sourceTree = "<group>";
@@ -192,6 +198,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2E2BB3E271D41C100568DF9 /* ViewController.swift in Sources */,
+				F2E2BB65271D520F00568DF9 /* DepartmentListVC.swift in Sources */,
+				F2E2BB67271D524800568DF9 /* EmployeeListVC.swift in Sources */,
 				F2E2BB5A271D41F000568DF9 /* FMDatabaseQueue.m in Sources */,
 				F2E2BB3A271D41C100568DF9 /* AppDelegate.swift in Sources */,
 				F2E2BB5C271D41F000568DF9 /* FMDatabase.m in Sources */,
