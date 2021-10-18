@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SQLite3
+import SQLite3 
 
 class ViewController: UIViewController {
     
@@ -55,7 +55,7 @@ class ViewController: UIViewController {
             sqlite3_finalize(stmt)
         }
         
-        if sqlite3_step(stmt) == SQLITE_DONE { 
+        if sqlite3_step(stmt) == SQLITE_DONE {
             print("Create Table Success!")
         }
     }
