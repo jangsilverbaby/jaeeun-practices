@@ -24,6 +24,7 @@
 		F2E2BB67271D524800568DF9 /* EmployeeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2BB66271D524800568DF9 /* EmployeeListVC.swift */; };
 		F2E2BB69271D55D200568DF9 /* hr.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = F2E2BB68271D55D200568DF9 /* hr.sqlite */; };
 		F2E2BB6B271D57A600568DF9 /* DepartmentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2BB6A271D57A600568DF9 /* DepartmentDAO.swift */; };
+		F2E2BB6D271FA46F00568DF9 /* EmployeeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2BB6C271FA46F00568DF9 /* EmployeeDAO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		F2E2BB66271D524800568DF9 /* EmployeeListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListVC.swift; sourceTree = "<group>"; };
 		F2E2BB68271D55D200568DF9 /* hr.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = hr.sqlite; sourceTree = "<group>"; };
 		F2E2BB6A271D57A600568DF9 /* DepartmentDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentDAO.swift; sourceTree = "<group>"; };
+		F2E2BB6C271FA46F00568DF9 /* EmployeeDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDAO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				F2E2BB64271D520F00568DF9 /* DepartmentListVC.swift */,
 				F2E2BB66271D524800568DF9 /* EmployeeListVC.swift */,
 				F2E2BB6A271D57A600568DF9 /* DepartmentDAO.swift */,
+				F2E2BB6C271FA46F00568DF9 /* EmployeeDAO.swift */,
 			);
 			path = HR;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2E2BB6D271FA46F00568DF9 /* EmployeeDAO.swift in Sources */,
 				F2E2BB3E271D41C100568DF9 /* ViewController.swift in Sources */,
 				F2E2BB65271D520F00568DF9 /* DepartmentListVC.swift in Sources */,
 				F2E2BB6B271D57A600568DF9 /* DepartmentDAO.swift in Sources */,
