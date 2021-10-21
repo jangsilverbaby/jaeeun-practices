@@ -47,7 +47,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="부서목록" id="d3Q-I2-aoc">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="TwP-i5-F2Z"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="TwP-i5-F2Z">
+                            <connections>
+                                <action selector="add:" destination="jwb-lf-eXx" id="fJt-U1-QLk"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="guC-jt-fKJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
