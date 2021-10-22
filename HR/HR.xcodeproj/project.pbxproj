@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F247EB4527225D6A00926334 /* DepartPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F247EB4427225D6A00926334 /* DepartPickerVC.swift */; };
 		F2E2BB3A271D41C100568DF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2BB39271D41C100568DF9 /* AppDelegate.swift */; };
 		F2E2BB3C271D41C100568DF9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2BB3B271D41C100568DF9 /* SceneDelegate.swift */; };
 		F2E2BB3E271D41C100568DF9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2BB3D271D41C100568DF9 /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F247EB4427225D6A00926334 /* DepartPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartPickerVC.swift; sourceTree = "<group>"; };
 		F2E2BB36271D41C100568DF9 /* HR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2E2BB39271D41C100568DF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2E2BB3B271D41C100568DF9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				F2E2BB66271D524800568DF9 /* EmployeeListVC.swift */,
 				F2E2BB6A271D57A600568DF9 /* DepartmentDAO.swift */,
 				F2E2BB6C271FA46F00568DF9 /* EmployeeDAO.swift */,
+				F247EB4427225D6A00926334 /* DepartPickerVC.swift */,
 			);
 			path = HR;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				F2E2BB6B271D57A600568DF9 /* DepartmentDAO.swift in Sources */,
 				F2E2BB67271D524800568DF9 /* EmployeeListVC.swift in Sources */,
 				F2E2BB5A271D41F000568DF9 /* FMDatabaseQueue.m in Sources */,
+				F247EB4527225D6A00926334 /* DepartPickerVC.swift in Sources */,
 				F2E2BB3A271D41C100568DF9 /* AppDelegate.swift in Sources */,
 				F2E2BB5C271D41F000568DF9 /* FMDatabase.m in Sources */,
 				F2E2BB5D271D41F000568DF9 /* FMDatabasePool.m in Sources */,
