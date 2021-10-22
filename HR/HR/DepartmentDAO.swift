@@ -51,7 +51,7 @@ class DepartmentDAO {
             let sql = """
                 SELECT depart_cd, depart_title, depart_addr
                 FROM department
-                ORDER BY deaprt_cd ASC
+                ORDER BY depart_cd ASC
             """
             
             let rs = try self.fmdb.executeQuery(sql, values: nil)

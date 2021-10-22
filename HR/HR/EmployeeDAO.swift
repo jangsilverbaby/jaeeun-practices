@@ -72,7 +72,7 @@ class EmployeeDAO {
                 SELECT emp_cd, emp_name, join_date, state_cd, department.depart_title
                 FROM employee
                 JOIN department ON department.depart_cd = employee.depart_cd
-                ORDER BY employee.deaprt_cd ASC
+                ORDER BY employee.depart_cd ASC
             """
             
             let rs = try self.fmdb.executeQuery(sql, values: nil)

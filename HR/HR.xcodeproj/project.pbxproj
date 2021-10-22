@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F247EB4527225D6A00926334 /* DepartPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F247EB4427225D6A00926334 /* DepartPickerVC.swift */; };
+		F247EB4727229E0500926334 /* hr.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = F247EB4627229E0500926334 /* hr.sqlite */; };
 		F2E2BB3A271D41C100568DF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2BB39271D41C100568DF9 /* AppDelegate.swift */; };
 		F2E2BB3C271D41C100568DF9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2BB3B271D41C100568DF9 /* SceneDelegate.swift */; };
 		F2E2BB3E271D41C100568DF9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2BB3D271D41C100568DF9 /* ViewController.swift */; };
@@ -22,13 +23,13 @@
 		F2E2BB62271D420300568DF9 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F2E2BB61271D420300568DF9 /* libsqlite3.tbd */; };
 		F2E2BB65271D520F00568DF9 /* DepartmentListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2BB64271D520F00568DF9 /* DepartmentListVC.swift */; };
 		F2E2BB67271D524800568DF9 /* EmployeeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2BB66271D524800568DF9 /* EmployeeListVC.swift */; };
-		F2E2BB69271D55D200568DF9 /* hr.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = F2E2BB68271D55D200568DF9 /* hr.sqlite */; };
 		F2E2BB6B271D57A600568DF9 /* DepartmentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2BB6A271D57A600568DF9 /* DepartmentDAO.swift */; };
 		F2E2BB6D271FA46F00568DF9 /* EmployeeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2BB6C271FA46F00568DF9 /* EmployeeDAO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F247EB4427225D6A00926334 /* DepartPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartPickerVC.swift; sourceTree = "<group>"; };
+		F247EB4627229E0500926334 /* hr.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = hr.sqlite; sourceTree = "<group>"; };
 		F2E2BB36271D41C100568DF9 /* HR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2E2BB39271D41C100568DF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2E2BB3B271D41C100568DF9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,7 +53,6 @@
 		F2E2BB63271D424400568DF9 /* HR-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HR-Bridging-Header.h"; sourceTree = "<group>"; };
 		F2E2BB64271D520F00568DF9 /* DepartmentListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentListVC.swift; sourceTree = "<group>"; };
 		F2E2BB66271D524800568DF9 /* EmployeeListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListVC.swift; sourceTree = "<group>"; };
-		F2E2BB68271D55D200568DF9 /* hr.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = hr.sqlite; sourceTree = "<group>"; };
 		F2E2BB6A271D57A600568DF9 /* DepartmentDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentDAO.swift; sourceTree = "<group>"; };
 		F2E2BB6C271FA46F00568DF9 /* EmployeeDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDAO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,7 +90,7 @@
 		F2E2BB38271D41C100568DF9 /* HR */ = {
 			isa = PBXGroup;
 			children = (
-				F2E2BB68271D55D200568DF9 /* hr.sqlite */,
+				F247EB4627229E0500926334 /* hr.sqlite */,
 				F2E2BB39271D41C100568DF9 /* AppDelegate.swift */,
 				F2E2BB3B271D41C100568DF9 /* SceneDelegate.swift */,
 				F2E2BB3D271D41C100568DF9 /* ViewController.swift */,
@@ -193,9 +193,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2E2BB46271D41C400568DF9 /* LaunchScreen.storyboard in Resources */,
-				F2E2BB69271D55D200568DF9 /* hr.sqlite in Resources */,
 				F2E2BB43271D41C400568DF9 /* Assets.xcassets in Resources */,
 				F2E2BB41271D41C100568DF9 /* Main.storyboard in Resources */,
+				F247EB4727229E0500926334 /* hr.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
