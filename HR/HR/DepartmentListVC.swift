@@ -13,11 +13,11 @@ class DepartmentListVC : UITableViewController {
     let departDAO = DepartmentDAO() // SQLite 처리를 담당할 DAO 객체
     
     override func viewDidLoad() {
-        let dummyView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-        self.tableView.tableFooterView = dummyView
-        
         self.departList = self.departDAO.find() // 기존 저장된 부서 정보를 가져온다.
         self.initUI()// 화면이 로딩될 때 UI도 초기화
+        
+        let dummyView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        self.tableView.tableFooterView = dummyView
     }
     
     // UI 초기화 함수
@@ -50,7 +50,7 @@ class DepartmentListVC : UITableViewController {
         
         cell?.textLabel?.text = rowData.departTitle
         cell?.textLabel?.font = UIFont.systemFont(ofSize: 14)
-        cell? .detailTextLabel?.text = rowData.departAddr
+        cell?.detailTextLabel?.text = rowData.departAddr
         cell?.detailTextLabel?.font = UIFont.systemFont(ofSize: 12)
         
         return cell!
@@ -100,5 +100,4 @@ class DepartmentListVC : UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-    
 }

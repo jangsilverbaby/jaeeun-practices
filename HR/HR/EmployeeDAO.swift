@@ -34,7 +34,7 @@ struct EmployeeVO {
     var departTitle = "" // 소속 부서명
 }
 
-class EmploteeDAO {
+class EmployeeDAO {
     //FMDatabase 객체 생성 및 초기화
     lazy var fmdb: FMDatabase! = {
         // 1. 파일 매니저 객체를 생성한다.
