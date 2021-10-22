@@ -102,7 +102,13 @@
                             <outlet property="delegate" destination="dRP-7l-9GQ" id="StN-Jc-lXv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="oEU-VG-9GE"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="oEU-VG-9GE">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="VDA-Cv-M5g">
+                            <connections>
+                                <action selector="add:" destination="dRP-7l-9GQ" id="mB6-PY-Blz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q33-b5-rdr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
