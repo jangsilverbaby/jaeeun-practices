@@ -58,14 +58,13 @@ class DepartmentDAO {
             
             // 2. 결과 집합 추출
             while rs.next() {
-                let departCd = rs.int(forColumn: "deaprt_cd")
+                let departCd = rs.int(forColumn: "depart_cd")
                 let departTitle = rs.string(forColumn: "depart_title")
                 let departAddr = rs.string(forColumn: "depart_addr")
                 
                 // append 메소드 호출 시 아래 튜플을 괄호 없이 사용하지 않도록 주의
                 departList.append((Int(departCd), departTitle!, departAddr!))
             }
-            print("find")
         } catch let error as NSError {
             print("failed: \(error.localizedDescription)")
         }

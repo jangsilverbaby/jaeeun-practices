@@ -103,10 +103,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="oEU-VG-9GE">
-                        <barButtonItem key="leftBarButtonItem" title="Edit" id="1qT-ku-3w9"/>
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="1qT-ku-3w9">
+                            <connections>
+                                <action selector="editing:" destination="dRP-7l-9GQ" id="GzJ-Wz-fIa"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="VDA-Cv-M5g">
                             <connections>
-                                <action selector="editing:" destination="dRP-7l-9GQ" id="XyD-QR-9Fr"/>
+                                <action selector="add:" destination="dRP-7l-9GQ" id="kSy-7q-u9w"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
