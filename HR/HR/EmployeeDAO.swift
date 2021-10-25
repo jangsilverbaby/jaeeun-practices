@@ -63,15 +63,19 @@ class EmployeeDAO {
     }
     
     // 사원 목록을 가져올 매소드
-    func find() -> [EmployeeVO] {
+    func find(departCd: Int = 0) -> [EmployeeVO] {
         // 반환할 데이터를 담을 [DepartDecord] 타입의 객체 정의
         var employeeList = [EmployeeVO]()
         
         do {
+            // 1. 조건절 정의
+            let condition = departCd == 0 ? "" : "WHERE Employee.depart_cd = \(departCd)"
+            
             let sql = """
                 SELECT emp_cd, emp_name, join_date, state_cd, department.depart_title
                 FROM employee
                 JOIN department ON department.depart_cd = employee.depart_cd
+                \(condition)
                 ORDER BY employee.depart_cd ASC
             """
             
