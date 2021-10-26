@@ -169,4 +169,21 @@ class EmployeeDAO {
             return false
         }
     }
+    
+    func editState(empCd: Int, stateCd: EmpStateType) -> Bool {
+        do {
+            let sql = " UPDATE Employee SET state_cd = ? WHERE emp_cd = ? "
+            // 인자값 배열
+            var params = [Any]()
+            params.append(stateCd.rawValue) // 재직 상태 코드 0, 1, 2
+            params.append(empCd) // 사원 코드
+            
+            // 업데이트 실행
+            try self.fmdb.executeUpdate(sql, values: params)
+            return true
+        } catch let error as NSError {
+            print("UPDATE Error : \(error.localizedDescription)")
+            return false
+        }
+    }
 }

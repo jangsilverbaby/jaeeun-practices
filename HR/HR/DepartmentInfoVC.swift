@@ -114,11 +114,27 @@ class DepartmentInfoVC: UITableViewController {
             // 재직 상태를 나타내는 세그먼트 컨트롤
             let state = UISegmentedControl(items: ["재직중", "휴직", "퇴사"])
             state.frame.origin.x = self.view.frame.width - state.frame.width - 10
-            state.frame.origin.y = 10
+            state.frame.origin.y = 6
             state.selectedSegmentIndex = row.stateCd.rawValue // DB에 저장된 상태값으로 설정
+            state.tag = row.empCd // 액션 메소드에서 참조할 수 있도록 사원 코드를 저장
+            state.addTarget(self, action: #selector(self.changeState(_:)), for: .valueChanged)
             
             cell?.contentView.addSubview(state)
             return cell!
+        }
+    }
+    
+    @objc func changeState(_ sender: UISegmentedControl) {
+        // 1. 사원 코드
+        let empCd = sender.tag
+        // 2. 재직 상태
+        let stateCd = EmpStateType(rawValue: sender.selectedSegmentIndex)
+        
+        // 재직 상태 업데이트
+        if self.empDAO.editState(empCd: empCd, stateCd: stateCd!) {
+            let alert = UIAlertController(title: nil, message: "재직 상태가 변경되었습니다", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "확인", style:.cancel))
+            self.present(alert,animated: false)
         }
     }
 }
