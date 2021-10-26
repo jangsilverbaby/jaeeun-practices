@@ -37,7 +37,7 @@ class EmployeeListVC : UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EMP_CELL")
         
         // 사원명 + 재직 상태 출력
-        cell?.textLabel?.text = rowData.empName + "\(rowData.stateCd.desc())"
+        cell?.textLabel?.text = rowData.empName + "(\(rowData.stateCd.desc()))"
         cell?.textLabel?.font = UIFont.systemFont(ofSize: 14)
         
         cell?.detailTextLabel?.text = rowData.departTitle
