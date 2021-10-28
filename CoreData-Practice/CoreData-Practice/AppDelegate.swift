@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
-        let container = NSPersistentContainer(name: "CoreData_Practice")
+        let container = NSPersistentContainer(name: "CoreData_Practice") // 프로젝트에 추가된 xcdatamodelId 파일을 코어 데이터 시스템이 등록하고, 이를 이용하여 NSPersistentContainer 객체를 생성하는 역할
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
@@ -64,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Core Data Saving support
 
     func saveContext () {
-        let context = persistentContainer.viewContext
+        let context = persistentContainer.viewContext // 반환되는 값은 NSMAnagedObjectContext 객체(관리 객체 컨텍스트), 코어 데이터에서 데이터를 읽고 쓰기 위해 필요함, 직접 생성하는 것이 아니라 persistentContainer 객체의 viewContext 속성을 통해 참조해야함(앱 델리게이트 객체 -> persistentContatner -> viewContext)
         if context.hasChanges {
             do {
                 try context.save()

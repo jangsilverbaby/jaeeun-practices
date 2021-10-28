@@ -14,6 +14,7 @@
 		F201F8EE272A673A00A4ABE6 /* CoreData_Practice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F201F8EC272A673A00A4ABE6 /* CoreData_Practice.xcdatamodeld */; };
 		F201F8F0272A673D00A4ABE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F201F8EF272A673D00A4ABE6 /* Assets.xcassets */; };
 		F201F8F3272A673D00A4ABE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F201F8F1272A673D00A4ABE6 /* LaunchScreen.storyboard */; };
+		F201F8FB272A6B9000A4ABE6 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F201F8FA272A6B9000A4ABE6 /* ListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		F201F8EF272A673D00A4ABE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F201F8F2272A673D00A4ABE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F201F8F4272A673D00A4ABE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F201F8FA272A6B9000A4ABE6 /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				F201F8F1272A673D00A4ABE6 /* LaunchScreen.storyboard */,
 				F201F8F4272A673D00A4ABE6 /* Info.plist */,
 				F201F8EC272A673A00A4ABE6 /* CoreData_Practice.xcdatamodeld */,
+				F201F8FA272A6B9000A4ABE6 /* ListVC.swift */,
 			);
 			path = "CoreData-Practice";
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F201F8E8272A673A00A4ABE6 /* ViewController.swift in Sources */,
+				F201F8FB272A6B9000A4ABE6 /* ListVC.swift in Sources */,
 				F201F8E4272A673A00A4ABE6 /* AppDelegate.swift in Sources */,
 				F201F8E6272A673A00A4ABE6 /* SceneDelegate.swift in Sources */,
 				F201F8EE272A673A00A4ABE6 /* CoreData_Practice.xcdatamodeld in Sources */,
