@@ -209,4 +209,13 @@ class ListVC : UITableViewController {
             self.tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
+    
+    // 악세서리 영역을 탭했을 때 실행되는 메소드
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        let object = self.list[indexPath.row]
+        let uvc = self.storyboard?.instantiateViewController(withIdentifier: "LogVC") as! LogVC
+        uvc.board = (object as! BoardMO)
+        
+        self.show(uvc, sender: self)
+    }
 }
