@@ -13,6 +13,7 @@
 		F27D857C272F9C5200D41DFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F27D857A272F9C5200D41DFB /* Main.storyboard */; };
 		F27D857E272F9C5500D41DFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F27D857D272F9C5500D41DFB /* Assets.xcassets */; };
 		F27D8581272F9C5500D41DFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F27D857F272F9C5500D41DFB /* LaunchScreen.storyboard */; };
+		F27D858D272F9CCE00D41DFB /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F27D858B272F9CCE00D41DFB /* DataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F27D857D272F9C5500D41DFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F27D8580272F9C5500D41DFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F27D8582272F9C5500D41DFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F27D858C272F9CCE00D41DFB /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				F27D857D272F9C5500D41DFB /* Assets.xcassets */,
 				F27D857F272F9C5500D41DFB /* LaunchScreen.storyboard */,
 				F27D8582272F9C5500D41DFB /* Info.plist */,
+				F27D858B272F9CCE00D41DFB /* DataModel.xcdatamodeld */,
 			);
 			path = ManualCoreData;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F27D8579272F9C5200D41DFB /* ViewController.swift in Sources */,
+				F27D858D272F9CCE00D41DFB /* DataModel.xcdatamodeld in Sources */,
 				F27D8575272F9C5200D41DFB /* AppDelegate.swift in Sources */,
 				F27D8577272F9C5200D41DFB /* SceneDelegate.swift in Sources */,
 			);
@@ -358,6 +362,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F27D858B272F9CCE00D41DFB /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F27D858C272F9CCE00D41DFB /* DataModel.xcdatamodel */,
+			);
+			currentVersion = F27D858C272F9CCE00D41DFB /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F27D8569272F9C5200D41DFB /* Project object */;
 }
