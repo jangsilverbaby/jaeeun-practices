@@ -8,6 +8,8 @@
 import UIKit
 
 class MemoListVC: UITableViewController {
+    lazy var dao = MemoDAO()
+    
     // 앱 델리게이트 객체의 참조 정보를 읽어온다.
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -38,6 +40,10 @@ class MemoListVC: UITableViewController {
             self.present(vc!, animated: false)
             return 
         }
+        
+        // 코어 데이터에 저장된 데이터를 가져온다.
+        // 갱신된 데이터 목록을 이용하여 테이블 뷰를 다시 구성해야 하기 떄문에 fetch() 메소드는 뷰를 리로드하기 전에 호출되어야 한다.
+        self.appDelegate.memolist = self.dao.fetch()
         
         // 테이블 데이터를 다시 읽어들인다. 이에 따라 행을 구성하는 로직이 다시 실행될 것이다.
         tableView.reloadData()
