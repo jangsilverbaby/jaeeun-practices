@@ -27,6 +27,7 @@
 		F232CAF126DE4E4400A6C03A /* memo-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F232CAE526DE4E4400A6C03A /* memo-background@2x.png */; };
 		F232CAF226DE4E4400A6C03A /* button-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = F232CAE626DE4E4400A6C03A /* button-bg.png */; };
 		F249A3A326F46B4B00BD5528 /* UserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F249A3A226F46B4B00BD5528 /* UserInfoManager.swift */; };
+		F27D8591272FC91D00D41DFB /* MemoDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27D8590272FC91D00D41DFB /* MemoDAO.swift */; };
 		F2AB5C9026FACA2000685C5D /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2AB5C8F26FACA2000685C5D /* Tutorial.storyboard */; };
 		F2AB5C9226FAE2AD00685C5D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AB5C9126FAE2AD00685C5D /* Utils.swift */; };
 		F2AB5C9426FAF2EA00685C5D /* TutorialContentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AB5C9326FAF2EA00685C5D /* TutorialContentsVC.swift */; };
@@ -64,6 +65,7 @@
 		F232CAE526DE4E4400A6C03A /* memo-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "memo-background@2x.png"; sourceTree = "<group>"; };
 		F232CAE626DE4E4400A6C03A /* button-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-bg.png"; sourceTree = "<group>"; };
 		F249A3A226F46B4B00BD5528 /* UserInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoManager.swift; sourceTree = "<group>"; };
+		F27D8590272FC91D00D41DFB /* MemoDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDAO.swift; sourceTree = "<group>"; };
 		F2AB5C8F26FACA2000685C5D /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		F2AB5C9126FAE2AD00685C5D /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		F2AB5C9326FAF2EA00685C5D /* TutorialContentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialContentsVC.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				F249A3A226F46B4B00BD5528 /* UserInfoManager.swift */,
 				F2AB5C9126FAE2AD00685C5D /* Utils.swift */,
 				F2AB5C8F26FACA2000685C5D /* Tutorial.storyboard */,
+				F27D8590272FC91D00D41DFB /* MemoDAO.swift */,
 			);
 			path = MyMemory;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				F209D7E726C4D5C900EF498C /* MemoReadVC.swift in Sources */,
 				F2F7989E26C3BC03007BA537 /* AppDelegate.swift in Sources */,
 				F2AB5C9726FB04B200685C5D /* TutorialMasterVC.swift in Sources */,
+				F27D8591272FC91D00D41DFB /* MemoDAO.swift in Sources */,
 				F20D40FA26E2EFD60055E833 /* SWRevealViewController.m in Sources */,
 				F209D7E326C4D55800EF498C /* MemoListVC.swift in Sources */,
 				F249A3A326F46B4B00BD5528 /* UserInfoManager.swift in Sources */,
