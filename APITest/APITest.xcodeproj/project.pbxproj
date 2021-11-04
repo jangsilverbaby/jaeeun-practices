@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14087B5D8AC01FA78F515120 /* Pods_APITest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 894E42D0EA9F4205DF9A9F60 /* Pods_APITest.framework */; };
 		F201B75127325FF100E3E88E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F201B75027325FF100E3E88E /* AppDelegate.swift */; };
 		F201B75327325FF100E3E88E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F201B75227325FF100E3E88E /* SceneDelegate.swift */; };
 		F201B75527325FF100E3E88E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F201B75427325FF100E3E88E /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23DB83F8AF5D6709A825BE30 /* Pods-APITest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APITest.release.xcconfig"; path = "Target Support Files/Pods-APITest/Pods-APITest.release.xcconfig"; sourceTree = "<group>"; };
+		3683A481E46A7EC9DB71E072 /* Pods-APITest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APITest.debug.xcconfig"; path = "Target Support Files/Pods-APITest/Pods-APITest.debug.xcconfig"; sourceTree = "<group>"; };
+		894E42D0EA9F4205DF9A9F60 /* Pods_APITest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APITest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F201B74D27325FF100E3E88E /* APITest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APITest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F201B75027325FF100E3E88E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F201B75227325FF100E3E88E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14087B5D8AC01FA78F515120 /* Pods_APITest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		82DF4448EC66FBA531BD1861 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				894E42D0EA9F4205DF9A9F60 /* Pods_APITest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		94CD06A223F0C800B4CF85E1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3683A481E46A7EC9DB71E072 /* Pods-APITest.debug.xcconfig */,
+				23DB83F8AF5D6709A825BE30 /* Pods-APITest.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F201B74427325FF000E3E88E = {
 			isa = PBXGroup;
 			children = (
 				F201B74F27325FF100E3E88E /* APITest */,
 				F201B74E27325FF100E3E88E /* Products */,
+				94CD06A223F0C800B4CF85E1 /* Pods */,
+				82DF4448EC66FBA531BD1861 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F201B76127325FF200E3E88E /* Build configuration list for PBXNativeTarget "APITest" */;
 			buildPhases = (
+				A89A2FB8FF5C597085503A76 /* [CP] Check Pods Manifest.lock */,
 				F201B74927325FF000E3E88E /* Sources */,
 				F201B74A27325FF000E3E88E /* Frameworks */,
 				F201B74B27325FF000E3E88E /* Resources */,
+				86CB8A5385109F08FB788719 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		86CB8A5385109F08FB788719 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-APITest/Pods-APITest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-APITest/Pods-APITest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-APITest/Pods-APITest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A89A2FB8FF5C597085503A76 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-APITest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F201B74927325FF000E3E88E /* Sources */ = {
@@ -284,6 +353,7 @@
 		};
 		F201B76227325FF200E3E88E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3683A481E46A7EC9DB71E072 /* Pods-APITest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -311,6 +381,7 @@
 		};
 		F201B76327325FF200E3E88E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23DB83F8AF5D6709A825BE30 /* Pods-APITest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
