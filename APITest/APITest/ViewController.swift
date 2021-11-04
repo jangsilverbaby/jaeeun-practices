@@ -86,5 +86,58 @@ class ViewController: UIViewController {
         // 6. POST 전송, 서버로 전송하여 API 호출
         task.resume()
     }
+    
+    @IBAction func json(_ sender: Any) {
+        // 1. 전송할 값 준비
+        let userId = (self.userId.text)!
+        let name = (self.name.text)!
+        let param = ["userId" : userId, "name": name] // JSON 객체로 변활할 딕셔너리 준비
+        let paramData = try! JSONSerialization.data(withJSONObject: param, options: [])
+        
+        // 2. URL 객체 정의
+        let url = URL(string: "http://swiftapi.rubypaper.co.kr:2029/practice/echoJSON")
+        
+        // 3. URLRequest 객체를 정의하고, 요청 내용을 담는다.
+        var request = URLRequest(url: url!)
+        request.httpMethod = "POST" // 전송 방식
+        request.httpBody = paramData // 전송할 메세지 본문 내용
+        
+        // 4. HTTP 메세지에 포함될 헤더 설정
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue(String(paramData.count), forHTTPHeaderField: "Content-Length")
+        
+        // 5. URLSession 객체를 통해 전송 및 응답값 처리 로직 작성
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            // 5-1. 서버가 응답이 없거나 통신이 실패했을 때
+            if let e = error {
+                NSLog("An error has occurred : \(e.localizedDescription)")
+                return
+            }
+            // 5-2. 응답 처리 로직이 여기에 들어갑니다.
+            // 1) 메인 스레드에서 비동기로 처리되도록 한다.
+            DispatchQueue.main.async() {
+                do {
+                    let object = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary
+                    guard let jsonObject = object else { return }
+                    
+                    // 2) JSON 결과값을 추출한다.
+                    let result = jsonObject["result"] as? String
+                    let timestamp = jsonObject["timestamp"] as? String
+                    let userId = jsonObject["userId"] as? String
+                    let name = jsonObject["name"] as? String
+                    
+                    // 3) 결과가 성공일 때에만 텍스트 뷰에 출력한다.
+                    if result == "SUCCESS" {
+                        self.responseView.text = "아이디 : \(userId!)\n" + "이름 : \(name!)\n" + "응답결과 : \(result!)\n" + "응답시간 : \(timestamp!)\n" + "요청방식 : x-www-form-urlencoded\n"
+                        
+                    }
+                } catch let e as NSError {
+                    print("An error has occurred while parsing JSONObject : \(e.localizedDescription)")
+                }
+            } // end if DispatchQueue.main.async()
+        }
+        // 6. POST 전송, 서버로 전송하여 API 호출
+        task.resume()
+    }
 }
 
