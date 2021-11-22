@@ -230,4 +230,9 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         // 이 구문을 누락하면 이미지 피커 컨트롤러 창은 닫히지 않는다.
         picker.dismiss(animated: true)
     }
+    
+    @IBAction func backProfile(_ segue: UIStoryboardSegue) {
+        // 단지 프로필 화면으로 되돌아오기 위한 표식 역할만 할 뿐이므로
+        // 아무 내용도 작성하지 않음
+    }
 }
