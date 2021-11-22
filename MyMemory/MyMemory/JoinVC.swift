@@ -71,7 +71,38 @@ class JoinVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UINa
     }
     
     @IBAction func submit(_sender: Any) {
+        // 1. 전달할 값 준비
+        // 1-1. 이미지를 Base64 인코딩 처리
+        let profile = self.profile.image!.pngData()?.base64EncodedString()
+        // 1-2. 전달값을 Parameters 타입의 객체로 정의
+        let param: Parameters = [
+            "account" : self.fieldAccount.text!,
+            "passwd" : self.fieldPassword.text!,
+            "name" : self.fieldName.text!,
+            "profile_image" : profile!
+        ]
         
+        // 2. API 호출
+        let url = "http://swiftapi.rubypaper.co.kr:2029/userAccount/join"
+        let call = AF.request(url, method: HTTPMethod.post, parameters: param, encoding: JSONEncoding.default)
+        
+        // 3. 서버 응답값 처리
+        call.responseJSON { res in
+            // 3-1. JSON 형식으로 값이 제대로 전달되었는지 확인
+            guard let jsonObject = try! res.result.get() as? [String: Any] else {
+                self.alert("서버 호출 과정에사 오류가 발생했습니다.")
+                return
+            }
+            // 3-2. 응답 코드 확인. 0이면 성공
+            let resultCode = jsonObject["result_code"] as! Int
+            if resultCode == 0 {
+                self.alert("가입이 완료되었습니다.")
+            } else { // 3-4. 응답 코드가 0이 아닐 때에는 실패
+                let errorMsg = jsonObject["error_msg"] as! String
+                self.alert("오류발생 : \(errorMsg)")
+                
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
