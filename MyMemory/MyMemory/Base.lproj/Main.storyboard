@@ -311,6 +311,11 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="CyT-HE-AwF">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sg2-ZK-fsf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -323,6 +328,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="indicatorView" destination="CyT-HE-AwF" id="fzC-7A-hne"/>
                         <outlet property="profile" destination="ZWd-Ax-f3J" id="15S-F5-C7d"/>
                         <outlet property="tableView" destination="Ia7-yD-XBa" id="cWf-Io-2oV"/>
                     </connections>

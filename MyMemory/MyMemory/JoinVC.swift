@@ -9,8 +9,12 @@ import UIKit
 import Alamofire
 
 class JoinVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    // API 호출 상태값을 관리할 변수
+    var isCalling = false
+    
     @IBOutlet weak var profile: UIImageView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     
     // 테이블 뷰에 들어갈 텍스트 필드들
     var fieldAccount: UITextField! // 계정 필드
@@ -29,6 +33,7 @@ class JoinVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UINa
         // 프로필 이미지에 탭 제스처 및 액션 이벤트 설정
         let gesture = UITapGestureRecognizer(target: self, action: #selector(tappedProfile(_:)))
         self.profile.addGestureRecognizer(gesture)
+        self.view.bringSubviewToFront((self.indicatorView)) // 인디케이터 뷰를 화면 맨 앞으로
     }
     
     @objc func tappedProfile(_ sender: Any) {
@@ -71,6 +76,16 @@ class JoinVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UINa
     }
     
     @IBAction func submit(_sender: Any) {
+        if self.isCalling == true {
+            self.alert("진행 중입니다. 잠시만 기다려주세요.")
+            return
+        } else {
+            self.isCalling = true
+        }
+        
+        // 로직이 시작될 때 인디케이터 뷰 애니메이션 시작
+        self.indicatorView.startAnimating()
+        
         // 1. 전달할 값 준비
         // 1-1. 이미지를 Base64 인코딩 처리
         let profile = self.profile.image!.pngData()?.base64EncodedString()
@@ -88,8 +103,10 @@ class JoinVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UINa
         
         // 3. 서버 응답값 처리
         call.responseJSON { res in
+            // 서버에서 응받을 받았을 때 인디케이터 뷰 애니메이션 종료
             // 3-1. JSON 형식으로 값이 제대로 전달되었는지 확인
             guard let jsonObject = try! res.result.get() as? [String: Any] else {
+                self.isCalling = false
                 self.alert("서버 호출 과정에사 오류가 발생했습니다.")
                 return
             }
@@ -98,6 +115,7 @@ class JoinVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UINa
             if resultCode == 0 {
                 self.alert("가입이 완료되었습니다.")
             } else { // 3-4. 응답 코드가 0이 아닐 때에는 실패
+                self.isCalling = false
                 let errorMsg = jsonObject["error_msg"] as! String
                 self.alert("오류발생 : \(errorMsg)")
                 
