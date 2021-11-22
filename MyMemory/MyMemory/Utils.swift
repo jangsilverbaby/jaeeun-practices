@@ -16,4 +16,17 @@ extension UIViewController {
     func instanceTutorialVC(name: String) -> UIViewController? {
         return self.tutorialSB.instantiateViewController(withIdentifier: name)
     }
+    
+    func alert(_ message: String, completion: (()->Void)? = nil) {
+        // 메인 스레드에서 실행되도록
+        // URLSession 객체는 비동기 방식으로 동작함녀서 종종 응답 결과 처리를 서브 스레드에 맡기기 때문에 해당 메소드가 서브 스레드에서 호출될 경우를 방지하기 위해 알림창을 실행하는 구문이 메인 큐에서 처리되도록 블록으롬 감쌈
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "확인", style: .cancel) { (_) in
+                completion?() // completion 매개변수의 값이 nil이 아닐 때에만 실행되도록
+            }
+            alert.addAction(okAction)
+            self.present(alert, animated: false)
+        }
+    }
 }
