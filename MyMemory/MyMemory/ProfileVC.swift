@@ -15,6 +15,8 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     let tv = UITableView() // 프로필 목록
     let uinfo = UserInfoManager() // 개인 정보 관리 매니저
     
+    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         self.navigationItem.title = "프로필"
         
@@ -69,6 +71,9 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         let tap = UITapGestureRecognizer(target: self, action: #selector(profile(_:)))
         self.profileImage.addGestureRecognizer(tap)
         self.profileImage.isUserInteractionEnabled = true // 해당 객체가 사용자와 상호반응할 수 있도록 허락
+        
+        // 인디케이터 뷰를 화면 맨 앞으로
+        self.view.bringSubviewToFront(self.indicatorView)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -120,14 +125,23 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         
         loginAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         loginAlert.addAction(UIAlertAction(title: "Login", style: .destructive) { (_) in
+            // 인디케이터 실행
+            self.indicatorView.startAnimating()
             let account = loginAlert.textFields?[0].text ?? "" // 첫 번째 필드 : 계정
             let passwd = loginAlert.textFields?[1].text ?? "" // 두 번째 필드 : 비밀번호
             
             self.uinfo.login(account: account, passwd: passwd, success: {
+                // 인디케이터 종료
+                self.indicatorView.stopAnimating()
+                
+                // UI갱신
                 self.tv.reloadData() // 테이블 뷰를 갱신하한다.
                 self.profileImage.image = self.uinfo.profile // 이미지 프로필을 갱신한다.
                 self.drawBtn()
             }, fail: { msg in
+                // 인디케이터 종료
+                self.indicatorView.stopAnimating()
+                
                 self.alert(msg)
             })
         })
