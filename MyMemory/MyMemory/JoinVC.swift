@@ -104,6 +104,8 @@ class JoinVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UINa
         // 3. 서버 응답값 처리
         call.responseJSON { res in
             // 서버에서 응받을 받았을 때 인디케이터 뷰 애니메이션 종료
+            self.indicatorView.stopAnimating()
+            
             // 3-1. JSON 형식으로 값이 제대로 전달되었는지 확인
             guard let jsonObject = try! res.result.get() as? [String: Any] else {
                 self.isCalling = false
