@@ -17,6 +17,9 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     
+    // API 호툴 상태값을 관리할 변수
+    var isCalling = false
+    
     override func viewDidLoad() {
         self.navigationItem.title = "프로필"
         
@@ -112,6 +115,12 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     }
     
     @objc func doLogin(_ sender : Any) {
+        if self.isCalling == true {
+            self.alert("응답을 기다리는 중입니다. \n잠시만 기다려 주세요.")
+            return
+        } else {
+            self.isCalling = true
+        }
         let loginAlert = UIAlertController(title: "LOGIN", message: nil, preferredStyle: .alert)
         
         // 알림창에 들어갈 입력폼 추가
@@ -123,7 +132,9 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
             tf.isSecureTextEntry = true
         }
         
-        loginAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        loginAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel) { (_) in
+            self.isCalling = false
+        })
         loginAlert.addAction(UIAlertAction(title: "Login", style: .destructive) { (_) in
             // 인디케이터 실행
             self.indicatorView.startAnimating()
@@ -133,6 +144,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
             self.uinfo.login(account: account, passwd: passwd, success: {
                 // 인디케이터 종료
                 self.indicatorView.stopAnimating()
+                self.isCalling = false
                 
                 // UI갱신
                 self.tv.reloadData() // 테이블 뷰를 갱신하한다.
@@ -141,6 +153,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
             }, fail: { msg in
                 // 인디케이터 종료
                 self.indicatorView.stopAnimating()
+                self.isCalling = false
                 
                 self.alert(msg)
             })
