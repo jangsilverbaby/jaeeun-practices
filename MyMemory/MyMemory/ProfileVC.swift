@@ -77,6 +77,19 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         
         // 인디케이터 뷰를 화면 맨 앞으로
         self.view.bringSubviewToFront(self.indicatorView)
+        
+        // 키 체인 저장 여부 확인을 위한 임시 코드
+        let tk = TokenUtils()
+        if let accessToken = tk.load("kr.co.rubypaper.MyMemory", account: "accessToken") {
+            print("accessToken = \(accessToken)")
+        } else {
+            print("accessToken is nil")
+        }
+        if let refreshToke = tk.load("kr.co.rubypaper.MyMemory", account: "refreshToken") {
+            print("refreshToken = \(refreshToke)")
+        } else {
+            print("refreshToken is nil")
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
