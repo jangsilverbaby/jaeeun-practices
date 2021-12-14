@@ -179,7 +179,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         let alert = UIAlertController(title: nil, message: msg, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "취소", style: .cancel))
         alert.addAction(UIAlertAction(title: "확인", style: .destructive) { (_) in
-            if self.uinfo.logout() {
+            self.uinfo.logout() {
                 // (로그아웃 시 처리할 내용이 여기에 들어갈 예정입니다.)
                 self.tv.reloadData() // 테이블 뷰를 갱신한다.
                 self.profileImage.image = self.uinfo.profile // 이미지 프로필을 갱신한다.
