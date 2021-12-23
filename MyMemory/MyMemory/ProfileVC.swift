@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import LocalAuthentication // 로컬 인증 프레임워크
 
 // UITableViewDelegate : 테이블 뷰에서 살생한느 사용자 액션에 응답하기 위한 프로토콜
 // UITableViewDataSource : 데이터 소스를 이용하여 테이블 뷰를 구성하기 위해 필요한 프로토콜
@@ -288,4 +289,101 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         // 단지 프로필 화면으로 되돌아오기 위한 표식 역할만 할 뿐이므로
         // 아무 내용도 작성하지 않음
     }
+}
+
+extension ProfileVC {
+    func tokenValidate() { // 토큰 인증 메소드
+        // 0. 응답 캐시를 사용하지 않도록 응답 캐시를 모두 삭제합니다.
+        URLCache.shared.removeAllCachedResponses()
+        
+        // 1. 키 체인에 액세스 토큰이 없을 경우 유효성 검증을 진행하지 않음
+        let tk = TokenUtils()
+        guard let header = tk.getAuthorizationHeader() else {
+            return
+        }
+        
+        // 로딩 인디케이터 시작
+        self.indicatorView.startAnimating()
+        
+        // 2. 토큰 유효성을 검증하는 tokenValidate API를 호출한다.
+        let url = "http://swiftapi.rubypaperr.co.kr:2029/userAccount/tokenValidate"
+        let validate = AF.request(url, method: .post, encoding: JSONEncoding.default, headers: header)
+        
+        validate.responseJSON { res in
+            self.indicatorView.stopAnimating()
+            
+            let responseBody = try! res.result.get()
+            print(responseBody) // 2-1. 응답 결과를 확인하기 위해 메시지 본문 전체를 출력
+            guard let jsonObject = responseBody as? NSDictionary else {
+                self.alert("잘못된 응답입니다.")
+                return
+            }
+            // 3. 응답 결과 처리
+            let resultCode = jsonObject["result_code"] as! Int
+            if resultCode != 0 { // 3-1. 응답 결과가 실패일 때, 즉 토큰이 만료되었을 때
+                // 로컬 인증 실행
+                self.touchID()
+            }
+        } // end of response closure
+    } // end of func tokenValidate()
+    
+    func touchID() { // 터치 아이디 인증 메소드
+        // 1. LAContext 인스턴스 생성
+        let context = LAContext()
+        
+        // 2. 로컬 인증에 사용할 변수 정의
+        var error: NSError?
+        let msg = "인증이 필요합니다."
+        let deviceAuth = LAPolicy.deviceOwnerAuthenticationWithBiometrics // 인증 정책
+        
+        // 3. 로컬 인증이 사용 가능한지 여부 확인
+        if context.canEvaluatePolicy(deviceAuth, error: &error) {
+            // 4. 터치 아이디 인증창 실행
+            context.evaluatePolicy(deviceAuth, localizedReason: msg) { (success, e) in
+                if success { // 5. 인증 성공 : 토큰 갱신 로직
+                    // 5-1. 토큰 갱신 로직 실행
+                    self.refresh()
+                } else { // 6. 인증 실패
+                    // 인증 실패 원인에 대한 대응 로직
+                }
+            }
+        } else { // 7. 인증창이 실행되지 못한 경우
+            // 인증창 실행 불가 원인에 대한 대응 로직
+        }
+    }
+    
+    func refresh() { // 토큰 갱신 메소드
+        self.indicatorView.startAnimating() // 로딩 시작
+        
+        // 1. 인증 헤더
+        let tk = TokenUtils()
+        let header = tk.getAuthorizationHeader()
+        
+        // 2. 리프레시 토큰 전달 준비
+        let refreshToken = tk.load("kr.co.rubypaper.MyMemory", account: "refreshToken")
+        let param: Parameters = ["refresh_token" : refreshToken!]
+        
+        // 3. 호출 및 응답
+        let url = "http://swiftapi.rubypaperr.co.kr:2029/userAccount/refresh"
+        let refresh = AF.request(url, method: .post, parameters: param, encoding: JSONEncoding.default, headers: header)
+        refresh.responseJSON { res in
+            self.indicatorView.stopAnimating() // 로딩 중지
+            
+            guard let jsonObject = try! res.result.get() as? NSDictionary else {
+                self.alert("잘못된 응답입니다.")
+                return
+            }
+            // 4. 응답 결과 처리
+            let resultCode = jsonObject["result_code"] as! Int
+            if resultCode == 0 { // 성공 : 액세스 토큰이 갱신되었다는 의미
+                // 4-1. 키 체인에 지정된 액세스 토큰 교체
+                let accessToken = jsonObject["access_token"] as! String
+                tk.save("kr.co.rubypaper.MyMemory", account: "accessToken", value: accessToken)
+            } else { // 실패 : 액세스 토큰 만료
+                self.alert("인증이 만료되었으므로 다시 로그인해야 합니다.") {
+                    // 4-2. 로그아웃처리
+                }
+            }
+        } // end of responseJSON closure
+    } // end of func refresh()
 }
