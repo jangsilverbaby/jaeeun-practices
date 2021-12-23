@@ -318,7 +318,7 @@ extension ProfileVC {
         self.indicatorView.startAnimating()
         
         // 2. 토큰 유효성을 검증하는 tokenValidate API를 호출한다.
-        let url = "http://swiftapi.rubypaperr.co.kr:2029/userAccount/tokenValidate"
+        let url = "http://swiftapi.rubypaper.co.kr:2029/userAccount/tokenValidate"
         let validate = AF.request(url, method: .post, encoding: JSONEncoding.default, headers: header)
         
         validate.responseJSON { res in

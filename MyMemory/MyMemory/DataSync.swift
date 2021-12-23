@@ -28,7 +28,7 @@ class DataSync {
         let header = tk.getAuthorizationHeader()
         
         // 3. API 호출
-        let url = "http://swiftapi.rubypaperr.co.kr:2029/memo/search"
+        let url = "http://swiftapi.rubypaper.co.kr:2029/memo/search"
         let get = AF.request(url, method: .post, encoding: JSONEncoding
                                 .default, headers: header)
         
