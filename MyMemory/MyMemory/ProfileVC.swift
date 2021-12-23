@@ -21,6 +21,11 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     // API 호툴 상태값을 관리할 변수
     var isCalling = false
     
+    override func viewWillAppear(_ animated: Bool) {
+        // 토큰 인증 여부 체크
+        self.tokenValidate()
+    }
+    
     override func viewDidLoad() {
         self.navigationItem.title = "프로필"
         
@@ -345,10 +350,40 @@ extension ProfileVC {
                     self.refresh()
                 } else { // 6. 인증 실패
                     // 인증 실패 원인에 대한 대응 로직
+                    print((e?.localizedDescription)!)
+                    
+                    switch (e!._code) {
+                    case LAError.systemCancel.rawValue:
+                        self.alert("시스템에 의해 인증이 취소되었습니다.")
+                    case LAError.userCancel.rawValue:
+                        self.alert("사용자에 의해 인증이 취소되었습니다.") {
+                            self.commonLogout(true)
+                        }
+                    case LAError.userFallback.rawValue:
+                        OperationQueue.main.addOperation() { // 큐에 들어온 작업들이 순차적으로 처리되도록 해주는 오브젝티브-C 기반의 큐
+                            self.commonLogout(true)
+                        }
+                    default:
+                        OperationQueue.main.addOperation() {
+                            self.commonLogout(true)
+                        }
+                    }
                 }
             }
         } else { // 7. 인증창이 실행되지 못한 경우
             // 인증창 실행 불가 원인에 대한 대응 로직
+            print(error!.localizedDescription)
+            switch (error!.code) {
+            case LAError.biometryNotEnrolled.rawValue:
+                print("터치 아이디가 등록되어 있지 않습니다.")
+            case LAError.passcodeNotSet.rawValue:
+                print("패스 코드가 설정되어있지 않습니다.")
+            default: // LAError.touchIDNotAvailable 포함
+                print("터치 아이디를 사용할 수 없습니다.")
+                OperationQueue.main.addOperation() {
+                    self.commonLogout(true)
+                }
+            }
         }
     }
     
@@ -382,8 +417,28 @@ extension ProfileVC {
             } else { // 실패 : 액세스 토큰 만료
                 self.alert("인증이 만료되었으므로 다시 로그인해야 합니다.") {
                     // 4-2. 로그아웃처리
-                }
-            }
+                    OperationQueue.main.addOperation() {
+                        self.commonLogout(true)
+                    }
+                } // end of self.alert() closure
+            } // end of if resultCode ~ else
         } // end of responseJSON closure
     } // end of func refresh()
+    
+    // 토큰 갱신 과정에서 발생할 각종 실패나 오류 상황에 사용할 공용 록그아웃 메소드
+    func commonLogout(_ isLogin: Bool = false) {
+        // 1. 저장된 기존 개인 정보 & 키 체인 데이터를 삭제하여 로그아웃 상태로 전환
+        let userInfo = UserInfoManager()
+        userInfo.deviceLogout()
+        
+        // 2. 현재의 화면이 프로필 화면이라면 바로 UI를 갱신한다.
+        self.tv.reloadData() // 테이블 뷰를 갱신한다.
+        self.profileImage.image = userInfo.profile // 이미지 프로필을 갱신한다.
+        self.drawBtn()
+        
+        // 3. 기본 로그인 창 실행 여부
+        if isLogin {
+            self.doLogin(self) // 터치 이벤트를 대신해서 직접 액션 메소드를 호출하는 코드(트리거 코드)
+        }
+    }
 }
