@@ -180,7 +180,7 @@ class UserInfoManager {
         
         // 전송할 프로필 이미지
         let profileData = profile!.pngData()?.base64EncodedString()
-        let param: Parameters = ["profile_image" : profileData]
+        let param: Parameters = ["profile_image" : profileData!]
         
         // 이미지 전송
         let call = AF.request(url, method: .post, parameters: param, encoding: JSONEncoding.default, headers: header)
