@@ -71,6 +71,41 @@ class DataSync {
             */
         }
     }
+    
+    // Memo 엔터티에 저장된 모든 데이터 중에서 동기화되지 않은 것을 찾아 업로드한다.
+    func uploadData(_ indicatorView: UIActivityIndicatorView? = nil) {
+        // 1. 요청 객체 생성
+        let fetchRequest: NSFetchRequest<MemoMO> = MemoMO.fetchRequest()
+        
+        // 2. 최신 글 순으로 정렬
+        let regdateDesc = NSSortDescriptor(key: "regdate", ascending: false)
+        fetchRequest.sortDescriptors = [regdateDesc]
+        
+        // 3. 업로드가 되지 않은 데이터만 추출
+        fetchRequest.predicate = NSPredicate(format: "sync == false")
+        
+        do {
+            
+            let resultset = try self.context.fetch(fetchRequest)
+            
+            // 4. 읽어온 결과 집합을 순화하면서 [MemoData] 타입으로 변환한다.
+            for record in resultset {
+                print("upload data == \(record.title!)")
+                
+                // 5. 서버에 업로드한다.
+                self.uploadDatum(record) { // 마지막 데이터의 업로드가 끝났다면 로딩 표시 해제
+                    indicatorView?.stopAnimating()
+                }
+            }
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+    }
+    
+    // 인자값으로 입력된 개별 MemoMO 객체를 서버에 업로드한다.
+    func uploadDatum(_ item: MemoMO, complete: (() -> Void)? = nil) {
+        
+    }
 }
 
 // MARK: DataSync 유틸 메소드
