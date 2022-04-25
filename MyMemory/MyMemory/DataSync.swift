@@ -104,7 +104,54 @@ class DataSync {
     
     // 인자값으로 입력된 개별 MemoMO 객체를 서버에 업로드한다.
     func uploadDatum(_ item: MemoMO, complete: (() -> Void)? = nil) {
+        // 1. 헤더 설정
+        let tk = TokenUtils()
+        guard let header = tk.getAuthorizationHeader() else {
+            print("로그인 상태가 아니므로 [\(item.title)]를 업로드할 수 없습니다.")
+            return
+        }
         
+        // 2. 전송할 값 설정
+        var param: Parameters = [
+            "title" : item.title!,
+            "contents" : item.contents!,
+            "creare_date" : self.dateToString(item.regdate!)
+        ]
+        // 2-1. 이미지가 있을 경우 이미지도 전송할 값에 포함
+        if let imageData = item.image as Data? {
+            param["image"] = imageData.base64EncodedString()
+        }
+        
+        // 3. 전송
+        let url = "http://swiftapi.rubypaper.co.kr:2029/memo/save"
+        let upload = AF.request(url, method: .post, parameters: param, encoding: JSONEncoding.default, headers: header)
+        
+        // 4. 응답 및 결과 처리
+        upload.responseJSON { res in
+            guard let jsonObject = try! res.result.get() as? NSDictionary else {
+                print("잘못된 응답입니다.")
+                return
+            }
+            
+            let resultCode = jsonObject["result_code"] as! Int
+            if resultCode == 0 {
+                print("[\(item.title!)]이(가) 등록되었습니다.")
+                
+                // 코어 데이터에 반영
+                do {
+                    item.sync = true
+                    try self.context.save()
+                } catch let e as NSError {
+                    self.context.rollback()
+                    NSLog("An error has occurred : %s", e.localizedDescription)
+                }
+            } else {
+                print(jsonObject["error_msg"] as! String)
+            }
+            
+            // 완료 처리 클로저 실행
+            complete?()
+        }
     }
 }
 

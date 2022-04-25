@@ -175,6 +175,9 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
                 DispatchQueue.global(qos: .background).async { // 블록 내에 작성된 코드를 백그라운드에서 실행할 수 있게 해주는 글로벌 큐
                     sync.downloadBackupData() // 서버에 저장된 데이터가 있으면 내려받는다.
                 }
+                DispatchQueue.global(qos: .background).async {
+                    sync.uploadData() // 서버에 저장해야 할 데이터가 있으면 업로드한다.
+                }
                 
             }, fail: { msg in
                 // 인디케이터 종료
